@@ -7,42 +7,39 @@
     "https://cooltip.shop/endopeak": "https://endopeak24.com/b/order-now.php?aff_id=115043"
   };
 
-  // Obtém a URL atual
   const currentUrl = new URL(window.location.href);
   const baseUrl = currentUrl.protocol + "//" + currentUrl.host + currentUrl.pathname;
   const backRedirectLink = productRedirects[baseUrl];
 
-  // Verifica se a URL atual está no mapeamento
+  console.log("URL atual:", baseUrl);
+  console.log("Redirecionando para:", backRedirectLink);
+
   if (backRedirectLink) {
-    // Adiciona entradas no histórico do navegador para disparar o evento popstate
     history.pushState({}, "", location.href);
     history.pushState({}, "", location.href);
 
-    // Adiciona um ouvinte de evento para o evento popstate
     window.addEventListener('popstate', function(event) {
       if (event.state) {
-        // Redireciona para a URL de desconto
+        console.log("Evento popstate disparado. Redirecionando para:", backRedirectLink);
         location.href = backRedirectLink;
       }
     }, false);
 
-    // Adiciona um ouvinte de evento para a visibilidade da página
     document.addEventListener('visibilitychange', function() {
       if (document.visibilityState === 'hidden') {
-        // Redireciona para a URL de desconto
+        console.log("Página oculta. Redirecionando para:", backRedirectLink);
         location.href = backRedirectLink;
       }
     });
 
-    // Adiciona um ouvinte de evento para o evento beforeunload
     window.addEventListener('beforeunload', function(event) {
-      // Redireciona para a URL de desconto
+      console.log("Página sendo descarregada. Redirecionando para:", backRedirectLink);
       location.href = backRedirectLink;
-      // Previne o comportamento padrão do evento
       event.preventDefault();
     });
   }
 </script>
+
     <link rel="preload" href="https://scripts.converteai.net/b7c0118f-d1f1-4291-8210-dc2a3e7fc03d/players/64b4926b037324000991f127/player.js" as="script">
 <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
 <link rel="preload" href="https://images.converteai.net/b7c0118f-d1f1-4291-8210-dc2a3e7fc03d/players/64b4926b037324000991f127/thumbnail.jpg" as="image">
