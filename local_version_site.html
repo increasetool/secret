@@ -7,7 +7,7 @@
   <meta name="description" content="LeanBliss - Video Presentation">
   <title>Watch until the end - Video Presentation</title>
 
-  <!-- Estilos embutidos diretamente -->
+  <!-- Estilos embutidos diretamente para manter o design original -->
   <style>
     @font-face {
       font-family: main-font;
@@ -73,6 +73,7 @@
       font-family: var(--main-font-family);
     }
 
+    /* Video Background */
     .video-bg {
       background-color: #000;
       color: white;
@@ -90,6 +91,7 @@
       color: white;
     }
 
+    /* Container com espaçamento responsivo */
     .container {
       max-width: 1200px;
       margin: auto;
@@ -101,6 +103,7 @@
       padding-bottom: 1rem;
     }
 
+    /* Cabeçalho em SVG */
     .vsl-headline {
       font-size: var(--font-large);
       font-weight: bold;
@@ -110,6 +113,7 @@
       color: var(--accent-color-light);
     }
 
+    /* Vídeo responsivo */
     .videobox {
       position: relative;
       padding-bottom: 56.25%;
@@ -125,6 +129,7 @@
       height: 100%;
     }
 
+    /* Caixa de preços e produtos */
     .pricebox {
       margin-top: 20px;
     }
@@ -142,6 +147,7 @@
       max-width: 100%;
     }
 
+    /* Botões de compra e cartões */
     .buy-button1, .buy-button3, .buy-button6 {
       width: 150px;
       height: auto;
@@ -151,6 +157,7 @@
       width: 150px;
     }
 
+    /* Footer e copyright */
     footer {
       background-color: var(--footer-background-color);
       color: var(--footer-font-color);
@@ -181,53 +188,42 @@
       font-size: 0.9rem;
     }
 
-    .container-fluid {
-      padding: 0 15px;
-    }
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .vsl-headline {
+        font-size: 1.5rem;
+      }
 
-    .disclaimer {
-      text-align: center;
-      font-size: 0.8rem;
+      .buy-button1, .buy-button3, .buy-button6 {
+        width: 120px;
+      }
+
+      .credit-cards {
+        width: 120px;
+      }
+
+      h2.text-center {
+        font-size: 1.25rem;
+      }
     }
   </style>
 </head>
 <body>
-
 <div class="video-bg">
-  <div class="py-lg-2 py-1"></div>
-  <div class="atf_wrapper">
-    <div class="container headline">
-      <div class="row">
-        <div class="col-12 d-none d-lg-block">
-          <h2 class="text-center text-white vsl-headline">
-            <b>
-              <svg viewBox="0 0 700 75">
-                <text x="50%" y="30" text-anchor="middle" fill="white" class="vsl-headline">THE SECRET OF PORN ACTORS "1 TO 5 INCHES" <tspan class="vsl-headline-accent">IN A FEW WEEKS</tspan></text>
-                <text x="50%" y="64" text-anchor="middle" fill="white" class="vsl-headline">VIDEO AVAILABLE TODAY ONLY</text>
-              </svg>
-            </b>
-          </h2>
-        </div>
-
-        <div class="col-12 d-block d-lg-none">
-          <h2 class="text-center text-white vsl-headline">
-            <b>
-              <svg viewBox="0 0 550 125">
-                <text x="50%" y="30" text-anchor="middle" fill="white" class="vsl-headline">THE SECRET OF PORN ACTORS "1 TO 5 INCHES"</text>
-                <text x="50%" y="70" text-anchor="middle" fill="white" class="vsl-headline"><tspan class="vsl-headline-accent">IN A FEW WEEKS</tspan></text>
-                <text x="50%" y="110" text-anchor="middle" fill="white" class="vsl-headline">VIDEO AVAILABLE TODAY ONLY</text>
-              </svg>
-            </b>
-          </h2>
-        </div>
-      </div>
-    </div>
+  <div class="container headline">
+    <h2 class="text-center text-white vsl-headline">
+      <b>
+        <svg viewBox="0 0 700 75">
+          <text x="50%" y="30" text-anchor="middle" fill="white" class="vsl-headline">THE SECRET OF PORN ACTORS "1 TO 5 INCHES" <tspan class="vsl-headline-accent">IN A FEW WEEKS</tspan></text>
+          <text x="50%" y="64" text-anchor="middle" fill="white" class="vsl-headline">VIDEO AVAILABLE TODAY ONLY</text>
+        </svg>
+      </b>
+    </h2>
   </div>
 </div>
+
 <div class="container videobox">
-  <div id="vid_66de899f640aa3000bf15212" style="position:relative;width:100%;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/videoID" frameborder="0" allowfullscreen></iframe>
-  </div>
+  <iframe src="https://www.youtube.com/embed/66de899f640aa3000bf15212" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <div class="container pricebox">
@@ -244,84 +240,27 @@
         <p class="text-center">+ Small Shipping Fee</p>
       </div>
     </div>
-    <!-- Outros preços -->
-  </div>
-</div>
-<div class="col-lg-4 col-12 mb-3 highlighted">
-  <div class="price-box middle">
-    <h3 class="pricebox-bottle-nr text-center"><b style="color:#27579a">6 X BOTTLES</b></h3>
-    <p class="pricebox-day-supply-nr text-center">180 Day Supply</p>
-    <img src="https://endopeak24.com/assets/img/PRODx6.png" class="pricebox-product-img6 mx-auto d-block">
-    <img src="https://getleanbliss.com//statics/img/49.png" class="img-fluid mx-auto d-block">
-    <a href="https://buy-link.com" class="d-block text-center"><img src="https://getleanbliss.com//statics/img/buy-now2.png" class="buy-button6 mx-auto"></a>
-    <p class="pricebox-total-price text-center">TOTAL: <s>$299.00</s> <b>$249.00</b></p>
-    <img src="https://getleanbliss.com//statics/img/credit-cards.png" class="credit-cards mx-auto d-block">
-    <p class="text-center">*FREE Shipping</p>
-  </div>
-</div>
-
-<div class="col-lg-4 col-12 mb-3">
-  <div class="price-box right">
-    <h3 class="pricebox-bottle-nr text-center"><b style="color:#27579a">3 X BOTTLES</b></h3>
-    <p class="pricebox-day-supply-nr text-center">90 Day Supply</p>
-    <img src="https://endopeak24.com/assets/img/PRODx3.png" class="pricebox-product-img3 mx-auto d-block">
-    <img src="https://getleanbliss.com//statics/img/59.png" class="img-fluid mx-auto d-block">
-    <a href="https://buy-link.com" class="d-block text-center"><img src="https://getleanbliss.com//statics/img/buy-now.png" class="buy-button3 mx-auto"></a>
-    <p class="pricebox-total-price text-center">TOTAL: <s>$179.00</s> <b>$149.00</b></p>
-    <img src="https://getleanbliss.com//statics/img/credit-cards.png" class="credit-cards mx-auto d-block">
-    <p class="text-center">*FREE Shipping</p>
-  </div>
-</div>
-<div class="bg-white">
-  <div class="container-fluid">
-    <div class="row py-4">
-      <div class="container">
-        <p class="text-center bigger"><b>Our customers say</b></p>
-        <img src="https://getleanbliss.com//statics/img/stars2.png" class="img-fluid d-block mx-auto py-2" style="max-width:245px;">
-        <p class="text-center bigger">Based on <b>11,369 reviews!</b></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="ref-bg">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="container">
-        <h3 class="text-center medium">Scientific References:</h3>
-        <img src="https://getleanbliss.com//statics/img/refs-logos.png" class="img-fluid d-block mx-auto py-5" style="width:1200px;max-width:100%;">
-      </div>
-    </div>
+    <!-- Outras opções de preços para 3 e 6 garrafas -->
   </div>
 </div>
 <footer>
   <div class="footer-wrapper">
     <div class="footer-top-bg">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="footer-menu">
-              <ul class="pt-2">
-                <li class="footer-menu-links"><a href="" target="_blank">Contact</a></li>
-                <li class="footer-menu-links"><a href="" target="_blank">References</a></li>
-                <li class="footer-menu-links"><a href="" target="_blank">Terms Of Use</a></li>
-                <li class="footer-menu-links"><a href="" target="_blank">Disclaimer</a></li>
-                <li class="footer-menu-links"><a href="" target="_blank">Privacy Policy</a></li>
-                <li class="footer-menu-links"><a href="" target="_blank">Shipping Policy</a></li>
-                <li class="footer-menu-links"><a href="" target="_blank">Refund Policy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <ul class="footer-menu-links">
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Terms Of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
       </div>
     </div>
-    
+    <div
     <div class="footer-middle-bg">
       <div class="container">
         <div class="row">
           <div class="col-12">
             <div class="disclaimer">
-              <p class="text-center"><a class="text-dark" href="" target="_blank">Disclaimer Link</a></p>
+              <p class="text-center"><a class="text-dark" href="#">Disclaimer</a></p>
             </div>
           </div>
         </div>
@@ -335,6 +274,28 @@
     </div>
   </div>
 </footer>
+
+<!-- Scripts para redirecionamentos e temporizações -->
+<script>
+  // Temporização para mostrar os elementos após 1674 segundos (cerca de 28 minutos)
+  setTimeout(function() {
+    document.querySelector("#btn-cta").style.display = "block";
+    document.querySelector("#vsltimer_host").style.display = "block";
+    document.querySelector("#ordbtn_host").style.display = "block";
+  }, 1674000); // 28 minutos
+
+  // Exibição de elementos se o cookie já existir
+  function checkCookieAndShow() {
+    var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)LUI\.return_visit\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    if (cookieValue) {
+      document.querySelector("#btn-cta").style.display = "block";
+      document.querySelector("#vsltimer_host").style.display = "block";
+      document.querySelector("#ordbtn_host").style.display = "block";
+    }
+  }
+  
+  setTimeout(checkCookieAndShow, 1000); // Verificar o cookie 1 segundo após o carregamento
+</script>
 
 </body>
 </html>
