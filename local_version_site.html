@@ -2,42 +2,36 @@
 <html lang="pt-br">
   <head>
     <script>
-      const productRedirects = {
-        "https://increasetool.github.io/secret/no": "https://endopeak24.com/b/order-now.php?aff_id=115043"
-      };
+  const productRedirects = {
+    "https://increasetool.github.io/secret/local_version_site": "https://endopeak24.com/b/order-now.php?aff_id=115043"
+  };
 
-      const currentUrl = new URL(window.location.href);
-      const baseUrl = currentUrl.protocol + "//" + currentUrl.host + currentUrl.pathname;
-      const backRedirectLink = productRedirects[baseUrl];
+  const currentUrl = new URL(window.location.href);
+  const baseUrl = currentUrl.protocol + "//" + currentUrl.host + currentUrl.pathname;
+  const backRedirectLink = productRedirects[baseUrl];
 
-      console.log("URL atual:", baseUrl);
-      console.log("Redirecionando para:", backRedirectLink);
+  console.log("URL atual:", baseUrl);
+  console.log("Redirecionando para:", backRedirectLink);
 
-      if (backRedirectLink) {
-        history.pushState({}, "", location.href);
-        history.pushState({}, "", location.href);
-
-        window.addEventListener('popstate', function(event) {
-          if (event.state) {
-            console.log("Evento popstate disparado. Redirecionando para:", backRedirectLink);
-            location.href = backRedirectLink;
-          }
-        }, false);
-
-        document.addEventListener('visibilitychange', function() {
-          if (document.visibilityState === 'hidden') {
-            console.log("Página oculta. Redirecionando para:", backRedirectLink);
-            location.href = backRedirectLink;
-          }
-        });
-
-        window.addEventListener('beforeunload', function(event) {
-          console.log("Página sendo descarregada. Redirecionando para:", backRedirectLink);
-          location.href = backRedirectLink;
-          event.preventDefault();
-        });
+  if (backRedirectLink) {
+    // Evento para o botão "voltar" do navegador
+    window.addEventListener('popstate', function(event) {
+      if (event.state) {
+        console.log("Usuário clicou em voltar. Redirecionando para:", backRedirectLink);
+        location.href = backRedirectLink;
       }
-    </script>
+    }, false);
+
+    // Evento para quando o usuário tenta fechar ou sair da página
+    window.addEventListener('beforeunload', function(event) {
+      console.log("Usuário está tentando fechar a página. Redirecionando para:", backRedirectLink);
+      location.href = backRedirectLink;
+      // Previne a execução de outras ações
+      event.preventDefault();
+    });
+  }
+</script>
+
 
     <link rel="preload" href="https://scripts.converteai.net/b7c0118f-d1f1-4291-8210-dc2a3e7fc03d/players/64b4926b037324000991f127/player.js" as="script">
     <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
