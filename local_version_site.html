@@ -1,301 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noimageindex, nofollow, nosnippet">
-  <meta name="description" content="LeanBliss - Video Presentation">
-  <title>Watch until the end - Video Presentation</title>
+<html lang="pt-br">
+  <head>
+    <script>
+      const productRedirects = {
+        "https://cooltip.shop/endopeak": "https://endopeak24.com/b/order-now.php?aff_id=115043"
+      };
 
-  <!-- Estilos embutidos diretamente para manter o design original -->
-  <style>
-    @font-face {
-      font-family: main-font;
-      src: url("https://getleanbliss.com//statics/fonts/Quicksand-Regular.ttf");
-    }
+      const currentUrl = new URL(window.location.href);
+      const baseUrl = currentUrl.protocol + "//" + currentUrl.host + currentUrl.pathname;
+      const backRedirectLink = productRedirects[baseUrl];
 
-    @font-face {
-      font-family: bold-font;
-      src: url("https://getleanbliss.com//statics/fonts/Quicksand-Bold.ttf");
-    }
+      console.log("URL atual:", baseUrl);
+      console.log("Redirecionando para:", backRedirectLink);
 
-    @font-face {
-      font-family: bold-m-font;
-      src: url("https://getleanbliss.com//statics/fonts/ELMessiri-Bold.ttf");
-    }
+      if (backRedirectLink) {
+        history.pushState({}, "", location.href);
+        history.pushState({}, "", location.href);
 
-    @font-face {
-      font-family: roboto-bold-font;
-      src: url("https://getleanbliss.com//statics/fonts/RobotoCondensed-Bold.ttf");
-    }
+        window.addEventListener('popstate', function(event) {
+          if (event.state) {
+            console.log("Evento popstate disparado. Redirecionando para:", backRedirectLink);
+            location.href = backRedirectLink;
+          }
+        }, false);
 
-    @font-face {
-      font-family: light-font;
-      src: url("https://getleanbliss.com//statics/fonts/Quicksand-Light.ttf");
-    }
+        document.addEventListener('visibilitychange', function() {
+          if (document.visibilityState === 'hidden') {
+            console.log("Página oculta. Redirecionando para:", backRedirectLink);
+            location.href = backRedirectLink;
+          }
+        });
 
-    @font-face {
-      font-family: medium-font;
-      src: url("https://getleanbliss.com//statics/fonts/Quicksand-Medium.ttf");
-    }
+        window.addEventListener('beforeunload', function(event) {
+          console.log("Página sendo descarregada. Redirecionando para:", backRedirectLink);
+          location.href = backRedirectLink;
+          event.preventDefault();
+        });
+      }
+    </script>
 
-    @font-face {
-      font-family: semi-bold-font;
-      src: url("https://getleanbliss.com//statics/fonts/Quicksand-SemiBold.ttf");
-    }
+    <link rel="preload" href="https://scripts.converteai.net/b7c0118f-d1f1-4291-8210-dc2a3e7fc03d/players/64b4926b037324000991f127/player.js" as="script">
+    <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
+    <link rel="preload" href="https://images.converteai.net/b7c0118f-d1f1-4291-8210-dc2a3e7fc03d/players/64b4926b037324000991f127/thumbnail.jpg" as="image">
+    <link rel="preload" href="https://cdn.converteai.net/b7c0118f-d1f1-4291-8210-dc2a3e7fc03d/64b49251037324000991f126/main.m3u8" as="fetch">
+    <link rel="dns-prefetch" href="https://cdn.converteai.net">
+    <link rel="dns-prefetch" href="https://scripts.converteai.net">
+    <link rel="dns-prefetch" href="https://images.converteai.net">
+    <link rel="dns-prefetch" href="https://api.vturb.com.br">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    @font-face {
-      font-family: caslon-font;
-      src: url("https://getleanbliss.com//statics/fonts/BigCaslon.ttf");
-    }
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    * {
-      --background-color: white;
-      --main-font-color: #272727;
-      --main-hover-color: grey;
-      --main-font-family: main-font, Roboto, "Helvetica Neue", Arial, sans-serif;
-      --font-large: 2rem;
-      --font-medium: 1.5rem;
-      --font-normal: 1rem;
-      --font-small: 0.5rem;
-      --headline-color: var(--main-font-color);
-      --footer-background-color: black;
-      --copywrite-background-color: #272727;
-      --footer-font-color: #272727;
-      --footer-hover-color: var(--main-hover-color);
-      --accent-color-light: #00a536;
-      --color-dark: #3d56b0;
-      --color-light: #2fb3c5;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700&family=Dosis:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    body {
-      margin: 0;
-      font-family: var(--main-font-family);
-    }
+    <link rel="stylesheet" href="./assets/css/com.css">
 
-    /* Video Background */
-    .video-bg {
-      background-color: #000;
-      color: white;
-    }
-
-    .headline {
-      padding-top: 20px;
-    }
-
-    h2.text-center {
-      text-align: center;
-    }
-
-    h2.text-white {
-      color: white;
-    }
-
-    /* Container com espaçamento responsivo */
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 15px;
-    }
-
-    .py-1, .py-2, .py-4, .py-5 {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-    }
-
-    /* Cabeçalho em SVG */
-    .vsl-headline {
-      font-size: var(--font-large);
-      font-weight: bold;
-    }
-
-    .vsl-headline-accent {
-      color: var(--accent-color-light);
-    }
-
-    /* Vídeo responsivo */
-    .videobox {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-    }
-
-    .videobox iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Caixa de preços e produtos */
-    .pricebox {
-      margin-top: 20px;
-    }
-
-    .pricebox-bottle-nr {
-      font-size: var(--font-medium);
-    }
-
-    .pricebox-day-supply-nr {
-      font-size: var(--font-normal);
-      color: #272727;
-    }
-
-    .pricebox-product-img1, .pricebox-product-img3, .pricebox-product-img6 {
-      max-width: 100%;
-    }
-
-    /* Botões de compra e cartões */
-    .buy-button1, .buy-button3, .buy-button6 {
-      width: 150px;
-      height: auto;
-    }
-
-    .credit-cards {
-      width: 150px;
-    }
-
-    /* Footer e copyright */
-    footer {
-      background-color: var(--footer-background-color);
-      color: var(--footer-font-color);
-      text-align: center;
-      padding: 20px 0;
-    }
-
-    .footer-menu-links {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-menu-links a {
-      color: var(--footer-font-color);
-      text-decoration: none;
-    }
-
-    .footer-menu-links a:hover {
-      color: var(--footer-hover-color);
-    }
-
-    .footer-bottom-bg {
-      background-color: var(--copywrite-background-color);
-    }
-
-    .copyright {
-      padding: 10px;
-      font-size: 0.9rem;
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      .vsl-headline {
-        font-size: 1.5rem;
+    <title>Noticias</title>
+    
+    <style type="text/css">
+      header {
+        color: black;
+        background-image: url("assets/img/bg.jpeg");
+        background-color: white;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
       }
 
-      .buy-button1, .buy-button3, .buy-button6 {
-        width: 120px;
+      /* Estilo da headline */
+      .headline {
+        background-color: black;
+        color: white;
+        font-family: 'Oswald', sans-serif;
+        padding: 50px 20px;
+        text-align: center;
+        font-size: 2rem;
+        line-height: 1.5;
       }
 
-      .credit-cards {
-        width: 120px;
+      .headline span.highlight-yellow {
+        color: yellow;
       }
 
-      h2.text-center {
-        font-size: 1.25rem;
+      .headline span.highlight-red {
+        color: red;
       }
-    }
-  </style>
-</head>
-<body>
-<div class="video-bg">
-  <div class="container headline">
-    <h2 class="text-center text-white vsl-headline">
-      <b>
-        <svg viewBox="0 0 700 75">
-          <text x="50%" y="30" text-anchor="middle" fill="white" class="vsl-headline">THE SECRET OF PORN ACTORS "1 TO 5 INCHES" <tspan class="vsl-headline-accent">IN A FEW WEEKS</tspan></text>
-          <text x="50%" y="64" text-anchor="middle" fill="white" class="vsl-headline">VIDEO AVAILABLE TODAY ONLY</text>
-        </svg>
-      </b>
-    </h2>
-  </div>
-</div>
 
-<div class="container videobox">
-  <iframe src="https://www.youtube.com/embed/66de899f640aa3000bf15212" frameborder="0" allowfullscreen></iframe>
-</div>
+      @media (max-width: 768px) {
+        .headline {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
 
-<div class="container pricebox">
-  <div class="row">
-    <div class="col-lg-4 col-12 mb-3">
-      <div class="price-box left">
-        <h3 class="pricebox-bottle-nr text-center"><b style="color:#92b3e1">1 X BOTTLE</b></h3>
-        <p class="pricebox-day-supply-nr text-center">30 Day Supply</p>
-        <img src="https://endopeak24.com/assets/img/PRODx1.png" class="pricebox-product-img1 mx-auto d-block">
-        <img src="https://getleanbliss.com//statics/img/69.png" class="img-fluid mx-auto d-block">
-        <a href="https://buy-link.com" class="d-block text-center"><img src="https://getleanbliss.com//statics/img/buy-now.png" class="buy-button1 mx-auto"></a>
-        <p class="pricebox-total-price text-center">TOTAL: <s>$69.00</s> <b>$59.00</b></p>
-        <img src="https://getleanbliss.com//statics/img/credit-cards.png" class="credit-cards mx-auto d-block">
-        <p class="text-center">+ Small Shipping Fee</p>
-      </div>
-    </div>
-    <!-- Outras opções de preços para 3 e 6 garrafas -->
-  </div>
-</div>
-<footer>
-  <div class="footer-wrapper">
-    <div class="footer-top-bg">
+  </head>
+
+  <body>
+    
+    <header class="py-4">
       <div class="container">
-        <ul class="footer-menu-links">
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Terms Of Use</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-    <div
-    <div class="footer-middle-bg">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="disclaimer">
-              <p class="text-center"><a class="text-dark" href="#">Disclaimer</a></p>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+
+            <!-- Headline estilizada -->
+            <div class="headline">
+              <p>Descubra o <span class="highlight-yellow">segredo</span> que vai mudar a sua vida!</p>
+              <p>Aprenda a <span class="highlight-red">crescer 1 a 5 polegadas</span> em poucas semanas!</p>
             </div>
+
+            <!-- VSL -->
+            <div id="vid_66b6e3753b2d20000b824ce2" style="position:relative;width:100%;padding: 176.47058823529412% 0 0;"> 
+              <img id="thumb_66b6e3753b2d20000b824ce2" src="https://images.converteai.net/f2ee12ce-fcf2-4139-9d8a-6bc8de6348e9/players/66b6e3753b2d20000b824ce2/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"> 
+              <div id="backdrop_66b6e3753b2d20000b824ce2" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div> 
+            </div> 
+            <script type="text/javascript" id="scr_66b6e3753b2d20000b824ce2">
+              var s=document.createElement("script"); 
+              s.src="https://scripts.converteai.net/f2ee12ce-fcf2-4139-9d8a-6bc8de6348e9/players/66b6e3753b2d20000b824ce2/player.js", 
+              s.async=!0,document.head.appendChild(s); 
+            </script> 
+            <style> .elementor-element:has(#smartplayer) { width: 100%; } </style>
+            
           </div>
         </div>
       </div>
-    </div>
+    </header>
 
-    <div class="footer-bottom-bg">
-      <div class="copyright">
-        <p>Copyright &copy; 2024 <b>Your Brand</b> | All Rights Reserved</p>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Scripts para redirecionamentos e temporizações -->
-<script>
-  // Temporização para mostrar os elementos após 1674 segundos (cerca de 28 minutos)
-  setTimeout(function() {
-    document.querySelector("#btn-cta").style.display = "block";
-    document.querySelector("#vsltimer_host").style.display = "block";
-    document.querySelector("#ordbtn_host").style.display = "block";
-  }, 1674000); // 28 minutos
-
-  // Exibição de elementos se o cookie já existir
-  function checkCookieAndShow() {
-    var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)LUI\.return_visit\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    if (cookieValue) {
-      document.querySelector("#btn-cta").style.display = "block";
-      document.querySelector("#vsltimer_host").style.display = "block";
-      document.querySelector("#ordbtn_host").style.display = "block";
-    }
-  }
-  
-  setTimeout(checkCookieAndShow, 1000); // Verificar o cookie 1 segundo após o carregamento
-</script>
-
-</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./assets/js/com.js"></script>
+    
+  </body>
 </html>
