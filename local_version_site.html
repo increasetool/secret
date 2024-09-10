@@ -21,14 +21,6 @@
         location.href = backRedirectLink;
       }
     }, false);
-
-    // Evento para quando o usuário tenta fechar ou sair da página
-    window.addEventListener('beforeunload', function(event) {
-      console.log("Usuário está tentando fechar a página. Redirecionando para:", backRedirectLink);
-      location.href = backRedirectLink;
-      // Previne a execução de outras ações
-      event.preventDefault();
-    });
   }
 </script>
 
