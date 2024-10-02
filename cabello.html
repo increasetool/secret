@@ -27,30 +27,27 @@
     <style type="text/css">
       /* Critical inline CSS for initial load */
       body {
-        background-color: white; /* Mudança para fundo branco */
-        color: black; /* Mudança para texto preto */
+        background-color: white; /* Fundo branco */
+        color: black; /* Texto preto */
         font-family: 'Oswald', sans-serif;
       }
 
       header {
-        color: black; /* Texto preto no cabeçalho */
-        background-color: white; /* Fundo branco no cabeçalho */
+        color: black;
+        background-color: white;
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
       }
 
       .headline {
-        background-color: white; /* Fundo branco para a headline */
-        color: black; /* Texto preto */
-        padding: 50px 20px;
+        background-color: white;
+        color: black;
+        padding: 20px 15px; /* Diminui o padding para aproximar do topo */
         text-align: center;
-        font-size: 2rem;
-        line-height: 1.5;
-      }
-
-      .headline span.highlight-red {
-        color: red;
+        font-size: 1.8rem; /* Tamanho ajustado */
+        line-height: 1.4; /* Redução do espaçamento */
+        margin-bottom: 10px; /* Aproxima o vídeo da headline */
       }
 
       .headline span.highlight-red {
@@ -59,18 +56,24 @@
 
       @media (max-width: 768px) {
         .headline {
-          font-size: 1.5rem;
+          font-size: 1.4rem; /* Ajuste para telas menores */
+          padding: 15px 10px; /* Reduz padding no mobile */
         }
       }
 
       .container, .text-center, .row, .col-lg-8 {
         color: black; /* Texto preto nas colunas */
       }
+
+      /* Ajuste de espaçamento entre o vídeo e o último texto */
+      #vid_66fcb070aa3c52000a777f34 {
+        margin-bottom: 20px; /* Diminui o espaço entre o vídeo e o final */
+      }
     </style>
   </head>
 
   <body>
-    <header class="py-4">
+    <header class="py-2"> <!-- Reduzi o padding superior do header -->
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
