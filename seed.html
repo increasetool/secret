@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Noticias</title>
+    <title>News</title>
 
     <!-- Preload critical resources -->
     <link rel="preload" href="https://scripts.converteai.net/b7c0118f-d1f1-4291-8210-dc2a3e7fc03d/players/64b4926b037324000991f127/player.js" as="script" async>
@@ -30,6 +30,7 @@
         background-color: white; /* Fundo branco */
         color: black; /* Texto preto */
         font-family: 'Oswald', sans-serif;
+        margin: 0; /* Remove margens */
       }
 
       header {
@@ -43,11 +44,11 @@
       .headline {
         background-color: white;
         color: black;
-        padding: 20px 15px; /* Diminui o padding para aproximar do topo */
+        padding: 10px 10px; /* Diminui o padding para aproximar do topo */
         text-align: center;
-        font-size: 1.8rem; /* Tamanho ajustado */
-        line-height: 1.4; /* Redução do espaçamento */
-        margin-bottom: 10px; /* Aproxima o vídeo da headline */
+        font-size: 1.5rem; /* Tamanho ajustado */
+        line-height: 1.2; /* Redução do espaçamento */
+        margin-bottom: 5px; /* Aproxima o vídeo da headline */
       }
 
       .headline span.highlight-red {
@@ -56,8 +57,8 @@
 
       @media (max-width: 768px) {
         .headline {
-          font-size: 1.4rem; /* Ajuste para telas menores */
-          padding: 15px 10px; /* Reduz padding no mobile */
+          font-size: 1.2rem; /* Ajuste para telas menores */
+          padding: 10px 5px; /* Reduz padding no mobile */
         }
       }
 
@@ -67,7 +68,13 @@
 
       /* Ajuste de espaçamento entre o vídeo e o último texto */
       #vid_6700c1316deea7000b252803 {
-        margin-bottom: 20px; /* Diminui o espaço entre o vídeo e o final */
+        margin-bottom: 10px; /* Diminui o espaço entre o vídeo e o final */
+      }
+
+      /* Remove margens externas e internas desnecessárias */
+      body, html {
+        height: 100%;
+        overflow: hidden;
       }
     </style>
   </head>
@@ -78,13 +85,13 @@
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
 
-            <!-- Headline estilizada -->
+            <!-- Headline estilizada com texto simplificado em inglês -->
             <div class="headline">
-              <p><span class="highlight-red"></span> <br>The Simple Trick That’s Helping Men Satisfy Their Partners with Rock-Hard, Long-Lasting Erections – No Dangerous Drugs</p>
+              <p><span class="highlight-red"></span> <br>The Simple Trick for Rock-Hard, Long-Lasting Erections – No Dangerous Drugs</p>
               <p><span class="highlight-red"></span></p>
             </div>
 
-            <!-- VSL com lazy loading de imagens na proporção 4:5 -->
+            <!-- VSL com lazy loading de imagens na proporção original -->
             <div id="vid_6700c1316deea7000b252803" style="position:relative;width:100%;padding-top:125%;">
               <img id="thumb_6700c1316deea7000b252803" loading="lazy" src="https://images.converteai.net/5e7a02df-47b8-46d3-985c-782d0197442d/players/6700c1316deea7000b252803/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
               <div id="backdrop_6700c1316deea7000b252803" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div>
