@@ -507,9 +507,7 @@
     function updatePrice(selector, oldPrice, newPrice) {
       let elements = document.querySelectorAll(selector);
       elements.forEach(el => {
-        if (el.innerHTML.includes(oldPrice)) {
-          el.innerHTML = el.innerHTML.replace(oldPrice, newPrice);
-        }
+        el.innerHTML = el.innerHTML.replace(oldPrice, newPrice);
       });
     }
 
@@ -518,6 +516,7 @@
     updatePrice(".pricebox-total-price", "$1782", "$294");
   });
 </script>
+
 
 
 	</body>
