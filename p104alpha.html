@@ -504,21 +504,21 @@
 </script>
 	<script>
   document.addEventListener("DOMContentLoaded", function() {
-    const priceUpdates = [
-      { item: "1", initial: "594", updated: "158" },
-      { item: "2", initial: "891", updated: "207" },
-      { item: "3", initial: "1782", updated: "294" }
-    ];
+    function updatePrice(selector, oldPrice, newPrice) {
+      let elements = document.querySelectorAll(selector);
+      elements.forEach(el => {
+        if (el.innerHTML.includes(oldPrice)) {
+          el.innerHTML = el.innerHTML.replace(oldPrice, newPrice);
+        }
+      });
+    }
 
-    priceUpdates.forEach(({ item, initial, updated }) => {
-      let initialPriceEl = document.querySelector(`span[replace][item="${item}"][parameter="initial_price"]`);
-      let priceEl = document.querySelector(`span[replace][item="${item}"][parameter="price"]`);
-
-      if (initialPriceEl) initialPriceEl.textContent = initial;
-      if (priceEl) priceEl.textContent = updated;
-    });
+    updatePrice(".pricebox-total-price", "$594", "$158");
+    updatePrice(".pricebox-total-price", "$891", "$207");
+    updatePrice(".pricebox-total-price", "$1782", "$294");
   });
 </script>
+
 
 	</body>
 </html>
