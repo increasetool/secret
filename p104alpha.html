@@ -504,20 +504,21 @@
 </script>
 	<script>
   document.addEventListener("DOMContentLoaded", function() {
-    function updatePrice(oldPrice, newPrice) {
-      let elements = document.body.querySelectorAll("*"); // Seleciona todos os elementos
-      elements.forEach(el => {
-        if (el.childNodes.length === 1 && el.innerHTML.includes(oldPrice)) {
+    function updatePrice(selector, oldPrice, newPrice) {
+      document.querySelectorAll(selector).forEach(el => {
+        if (el.innerHTML.includes(oldPrice)) {
           el.innerHTML = el.innerHTML.replace(oldPrice, newPrice);
         }
       });
     }
 
-    updatePrice("$594", "$158");
-    updatePrice("$891", "$207");
-    updatePrice("$1782", "$294");
+    // Substituir apenas os preços dentro dos elementos corretos
+    updatePrice(".pricebox-total-price", "$594", "$158");
+    updatePrice(".pricebox-total-price", "$891", "$207");
+    updatePrice(".pricebox-total-price", "$1782", "$294");
   });
 </script>
+
 
 
 
