@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Corrigido</title>
+    <title>Site com VTurb Player</title>
     <style>
         body {
             font-family: Tahoma, sans-serif;
@@ -38,72 +38,11 @@
     </style>
 </head>
 <body>
-    
-    <!-- VSL (Vídeo de Vendas) -->
+
+    <!-- Vídeo VTurb Player -->
     <div class="videobox">
-        <div id="vid_67ca1961b0afe3c8ad34b6a7" style="position:relative;width:100%;padding: 56.25% 0 0;">
-            <img id="thumb_67ca1961b0afe3c8ad34b6a7" src="https://images.converteai.net/4f9236a9-4e2d-47ab-986a-8e0bf380cebe/players/67ca1961b0afe3c8ad34b6a7/thumbnail.jpg" 
-                 style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
-            <div id="backdrop_67ca1961b0afe3c8ad34b6a7" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div>
-        </div>
+        <iframe id="vturb-player" src="https://player.vturb.com.br/4f9236a9-4e2d-47ab-986a-8e0bf380cebe" frameborder="0" allowfullscreen style="width:100%;height:100%;"></iframe>
     </div>
-    
-    <script type="text/javascript">
-        // Função para carregar o script do player
-        function loadPlayerScript() {
-            return new Promise((resolve, reject) => {
-                var script = document.createElement("script");
-                script.src = "https://scripts.converteai.net/4f9236a9-4e2d-47ab-986a-8e0bf380cebe/players/67ca1961b0afe3c8ad34b6a7/player.js";
-                script.async = true;
-                script.onload = () => resolve();
-                script.onerror = () => reject(new Error("Falha ao carregar o script do player."));
-                document.head.appendChild(script);
-            });
-        }
-
-        // Função para monitorar o tempo do vídeo
-        function monitorVideoTime(player) {
-            player.on('timeupdate', function(event) {
-                console.log("Tempo assistido:", event.currentTime);
-                if (event.currentTime >= 5) { // Tempo ajustado para 5 segundos
-                    console.log("Tempo atingido! Mostrando conteúdo...");
-                    document.getElementById('content').style.display = 'block';
-                    player.off('timeupdate'); // Remove o listener para evitar múltiplas execuções
-                }
-            });
-        }
-
-        // Função principal
-        async function init() {
-            try {
-                // Carrega o script do player
-                await loadPlayerScript();
-                console.log("Script do player carregado com sucesso!");
-
-                // Verifica se o player foi carregado corretamente
-                const checkPlayer = () => {
-                    const player = window.ConverteAi?.players?.['67ca1961b0afe3c8ad34b6a7'];
-                    if (player) {
-                        console.log("Player carregado!");
-                        player.on('play', () => {
-                            console.log("Vídeo iniciado...");
-                            monitorVideoTime(player); // Inicia o monitoramento do tempo
-                        });
-                    } else {
-                        console.log("Aguardando player...");
-                        setTimeout(checkPlayer, 1000); // Tenta novamente após 1 segundo
-                    }
-                };
-
-                checkPlayer();
-            } catch (error) {
-                console.error("Erro ao carregar o player:", error);
-            }
-        }
-
-        // Inicia o processo
-        init();
-    </script>
 
     <!-- Conteúdo que será exibido após 5 segundos -->
     <div class="container" id="content">
@@ -121,5 +60,44 @@
             <img src="https://i.postimg.cc/KvYP8Zs2/Captura-de-Tela-5-1.png" class="checkout-img" alt="Checkout 3">
         </a>
     </div>
+
+    <script type="text/javascript">
+        // Função para monitorar o tempo do vídeo
+        function monitorVideoTime() {
+            const player = document.getElementById('vturb-player');
+            const content = document.getElementById('content');
+
+            // Verifica se o player está carregado
+            if (player) {
+                // Adiciona um listener para o evento de mensagem (postMessage)
+                window.addEventListener('message', function(event) {
+                    // Verifica se a mensagem é do VTurb Player
+                    if (event.origin === 'https://player.vturb.com.br') {
+                        const data = event.data;
+
+                        // Verifica se a mensagem contém o tempo atual do vídeo
+                        if (data.currentTime) {
+                            console.log("Tempo assistido:", data.currentTime);
+
+                            // Exibe o conteúdo após 5 segundos
+                            if (data.currentTime >= 5) {
+                                console.log("Tempo atingido! Mostrando conteúdo...");
+                                content.style.display = 'block';
+                                window.removeEventListener('message', arguments.callee); // Remove o listener
+                            }
+                        }
+                    }
+                });
+            } else {
+                console.error("Player não encontrado!");
+            }
+        }
+
+        // Inicia o monitoramento após o player carregar
+        document.getElementById('vturb-player').onload = function() {
+            console.log("Player carregado!");
+            monitorVideoTime();
+        };
+    </script>
 </body>
 </html>
