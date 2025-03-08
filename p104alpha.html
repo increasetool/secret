@@ -3,16 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch</title>
+    <title>Site Corrigido</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Tahoma, sans-serif;
             text-align: center;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: none;
         }
         .checkout-img {
             width: 300px;
             display: block;
-            margin: 20px auto;
+            margin: 40px auto;
+        }
+        .offer-text {
+            font-size: 29px;
+            font-weight: bold;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .offer-text span {
+            color: gold;
+        }
+        @media (max-width: 768px) {
+            .offer-text {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -32,17 +53,26 @@
         document.head.appendChild(s);
     </script>
 
-    <!-- Imagens com links de checkout -->
-    <a href="https://buygoods.com/secure/checkout.html?sessid2=sessid20250305172514270&aff_id=85614&account_id=9236&product_codename=alp6DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1">
-        <img src="https://i.postimg.cc/FzBDs29N/Captura-de-Tela-3-1.png" class="checkout-img" alt="Checkout 1">
-    </a>
-
-    <a href="https://buygoods.com/secure/checkout.html?sessid2=sessid20250305172514270&aff_id=85614&account_id=9236&product_codename=alp3DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1">
-        <img src="https://i.postimg.cc/26fdkhgc/Captura-de-Tela-4-1.png" class="checkout-img" alt="Checkout 2">
-    </a>
-
-    <a href="https://buygoods.com/secure/checkout.html?sessid2=sessid20250305172514270&aff_id=85614&account_id=9236&product_codename=alp2DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRj&vid1=dtcva&vid3=va&fb=1">
-        <img src="https://i.postimg.cc/KvYP8Zs2/Captura-de-Tela-5-1.png" class="checkout-img" alt="Checkout 3">
-    </a>
+    <div class="container" id="content">
+        <p class="offer-text">To get started with <span>AlphaBites</span> today, simply click below and take advantage of this unique special time-limited offer…</p>
+        
+        <a href="https://buygoods.com/secure/checkout.html?sessid2=sessid20250305172514270&aff_id=85614&account_id=9236&product_codename=alp6DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1">
+            <img src="https://i.postimg.cc/FzBDs29N/Captura-de-Tela-3-1.png" class="checkout-img" alt="Checkout 1">
+        </a>
+    
+        <a href="https://buygoods.com/secure/checkout.html?sessid2=sessid20250305172514270&aff_id=85614&account_id=9236&product_codename=alp3DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1">
+            <img src="https://i.postimg.cc/26fdkhgc/Captura-de-Tela-4-1.png" class="checkout-img" alt="Checkout 2">
+        </a>
+    
+        <a href="https://buygoods.com/secure/checkout.html?sessid2=sessid20250305172514270&aff_id=85614&account_id=9236&product_codename=alp2DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRj&vid1=dtcva&vid3=va&fb=1">
+            <img src="https://i.postimg.cc/KvYP8Zs2/Captura-de-Tela-5-1.png" class="checkout-img" alt="Checkout 3">
+        </a>
+    </div>
+    
+    <script>
+        setTimeout(function() {
+            document.getElementById('content').style.display = 'block';
+        }, 5000); // Altere o valor 5000 para o tempo desejado em milissegundos
+    </script>
 </body>
 </html>
