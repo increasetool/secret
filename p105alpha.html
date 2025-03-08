@@ -64,6 +64,7 @@
                         player.on('timeupdate', function(event) {
                             console.log("Tempo assistido:", event.currentTime);
                             if (event.currentTime >= 10) { // Ajuste o tempo desejado aqui
+                                console.log("Tempo atingido! Mostrando conteúdo...");
                                 document.getElementById('content').style.display = 'block';
                                 player.off('timeupdate');
                             }
