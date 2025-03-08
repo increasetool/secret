@@ -49,44 +49,60 @@
     </div>
     
     <script type="text/javascript">
-        // Carrega o script do player
-        var s = document.createElement("script");
-        s.src = "https://scripts.converteai.net/4f9236a9-4e2d-47ab-986a-8e0bf380cebe/players/67ca1961b0afe3c8ad34b6a7/player.js";
-        s.async = true;
-        document.head.appendChild(s);
+        // Função para carregar o script do player
+        function loadPlayerScript() {
+            return new Promise((resolve, reject) => {
+                var script = document.createElement("script");
+                script.src = "https://scripts.converteai.net/4f9236a9-4e2d-47ab-986a-8e0bf380cebe/players/67ca1961b0afe3c8ad34b6a7/player.js";
+                script.async = true;
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error("Falha ao carregar o script do player."));
+                document.head.appendChild(script);
+            });
+        }
 
-        // Função para verificar se o player foi carregado
-        function checkPlayer() {
-            var player = window.ConverteAi && window.ConverteAi.players && window.ConverteAi.players['67ca1961b0afe3c8ad34b6a7'];
-            if (player) {
-                console.log("Player carregado!");
+        // Função para monitorar o tempo do vídeo
+        function monitorVideoTime(player) {
+            player.on('timeupdate', function(event) {
+                console.log("Tempo assistido:", event.currentTime);
+                if (event.currentTime >= 5) { // Tempo ajustado para 5 segundos
+                    console.log("Tempo atingido! Mostrando conteúdo...");
+                    document.getElementById('content').style.display = 'block';
+                    player.off('timeupdate'); // Remove o listener para evitar múltiplas execuções
+                }
+            });
+        }
 
-                // Monitora o evento de play
-                player.on('play', function() {
-                    console.log("Vídeo iniciado...");
+        // Função principal
+        async function init() {
+            try {
+                // Carrega o script do player
+                await loadPlayerScript();
+                console.log("Script do player carregado com sucesso!");
 
-                    // Monitora o tempo do vídeo
-                    player.on('timeupdate', function(event) {
-                        console.log("Tempo assistido:", event.currentTime);
+                // Verifica se o player foi carregado corretamente
+                const checkPlayer = () => {
+                    const player = window.ConverteAi?.players?.['67ca1961b0afe3c8ad34b6a7'];
+                    if (player) {
+                        console.log("Player carregado!");
+                        player.on('play', () => {
+                            console.log("Vídeo iniciado...");
+                            monitorVideoTime(player); // Inicia o monitoramento do tempo
+                        });
+                    } else {
+                        console.log("Aguardando player...");
+                        setTimeout(checkPlayer, 1000); // Tenta novamente após 1 segundo
+                    }
+                };
 
-                        // Exibe o conteúdo após 5 segundos
-                        if (event.currentTime >= 5) { // Tempo ajustado para 5 segundos
-                            console.log("Tempo atingido! Mostrando conteúdo...");
-                            document.getElementById('content').style.display = 'block';
-                            player.off('timeupdate'); // Remove o listener para evitar múltiplas execuções
-                        }
-                    });
-                });
-            } else {
-                console.log("Aguardando player...");
-                setTimeout(checkPlayer, 1000); // Tenta novamente após 1 segundo
+                checkPlayer();
+            } catch (error) {
+                console.error("Erro ao carregar o player:", error);
             }
         }
 
-        // Inicia a verificação do player após o script ser carregado
-        s.onload = function() {
-            checkPlayer();
-        };
+        // Inicia o processo
+        init();
     </script>
 
     <!-- Conteúdo que será exibido após 5 segundos -->
