@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Corrigido</title>
+    <title>Watch</title>
     <style>
         body {
             font-family: Tahoma, sans-serif;
@@ -51,6 +51,18 @@
         s.src = "https://scripts.converteai.net/4f9236a9-4e2d-47ab-986a-8e0bf380cebe/players/67ca1961b0afe3c8ad34b6a7/player.js";
         s.async = true;
         document.head.appendChild(s);
+
+        s.onload = function() {
+            var player = window.ConverteAi && window.ConverteAi.players && window.ConverteAi.players['67ca1961b0afe3c8ad34b6a7'];
+            if (player) {
+                player.on('timeupdate', function(event) {
+                    if (event.currentTime >= 10) { // Altere "30" para o tempo desejado em segundos
+                        document.getElementById('content').style.display = 'block';
+                        player.off('timeupdate'); // Para evitar chamadas repetitivas
+                    }
+                });
+            }
+        };
     </script>
 
     <div class="container" id="content">
@@ -68,11 +80,5 @@
             <img src="https://i.postimg.cc/KvYP8Zs2/Captura-de-Tela-5-1.png" class="checkout-img" alt="Checkout 3">
         </a>
     </div>
-    
-    <script>
-        setTimeout(function() {
-            document.getElementById('content').style.display = 'block';
-        }, 10000); // Altere o valor 5000 para o tempo desejado em milissegundos
-    </script>
 </body>
 </html>
