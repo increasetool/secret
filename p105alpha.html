@@ -35,13 +35,25 @@
                 font-size: 14px;
             }
         }
+        .videobox {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* Proporção 16:9 para o vídeo */
+        }
+        #vturb-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
 
     <!-- Vídeo VTurb Player -->
     <div class="videobox">
-        <iframe id="vturb-player" src="https://player.vturb.com.br/4f9236a9-4e2d-47ab-986a-8e0bf380cebe" frameborder="0" allowfullscreen style="width:100%;height:100%;"></iframe>
+        <iframe id="vturb-player" src="https://player.vturb.com.br/4f9236a9-4e2d-47ab-986a-8e0bf380cebe" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <!-- Conteúdo que será exibido após 5 segundos -->
@@ -76,7 +88,7 @@
                         const data = event.data;
 
                         // Verifica se a mensagem contém o tempo atual do vídeo
-                        if (data.currentTime) {
+                        if (data && data.currentTime) {
                             console.log("Tempo assistido:", data.currentTime);
 
                             // Exibe o conteúdo após 5 segundos
