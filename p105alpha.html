@@ -14,7 +14,7 @@
             padding: 0;
         }
         .container {
-            display: none;
+            display: none; /* Inicialmente oculto */
         }
         .checkout-img {
             width: 300px;
@@ -49,36 +49,47 @@
     </div>
     
     <script type="text/javascript">
+        // Carrega o script do player
         var s = document.createElement("script");
         s.src = "https://scripts.converteai.net/4f9236a9-4e2d-47ab-986a-8e0bf380cebe/players/67ca1961b0afe3c8ad34b6a7/player.js";
         s.async = true;
         document.head.appendChild(s);
 
-        s.onload = function() {
-            function checkPlayer() {
-                var player = window.ConverteAi && window.ConverteAi.players && window.ConverteAi.players['67ca1961b0afe3c8ad34b6a7'];
-                if (player) {
-                    console.log("Player carregado!");
-                    player.on('play', function() {
-                        console.log("Vídeo iniciado...");
-                        player.on('timeupdate', function(event) {
-                            console.log("Tempo assistido:", event.currentTime);
-                            if (event.currentTime >= 05) { // Ajuste o tempo desejado aqui
-                                console.log("Tempo atingido! Mostrando conteúdo...");
-                                document.getElementById('content').style.display = 'block';
-                                player.off('timeupdate'); // Remove o listener para evitar múltiplas execuções
-                            }
-                        });
+        // Função para verificar se o player foi carregado
+        function checkPlayer() {
+            var player = window.ConverteAi && window.ConverteAi.players && window.ConverteAi.players['67ca1961b0afe3c8ad34b6a7'];
+            if (player) {
+                console.log("Player carregado!");
+
+                // Monitora o evento de play
+                player.on('play', function() {
+                    console.log("Vídeo iniciado...");
+
+                    // Monitora o tempo do vídeo
+                    player.on('timeupdate', function(event) {
+                        console.log("Tempo assistido:", event.currentTime);
+
+                        // Exibe o conteúdo após 5 segundos
+                        if (event.currentTime >= 5) { // Tempo ajustado para 5 segundos
+                            console.log("Tempo atingido! Mostrando conteúdo...");
+                            document.getElementById('content').style.display = 'block';
+                            player.off('timeupdate'); // Remove o listener para evitar múltiplas execuções
+                        }
                     });
-                } else {
-                    console.log("Aguardando player...");
-                    setTimeout(checkPlayer, 1000);
-                }
+                });
+            } else {
+                console.log("Aguardando player...");
+                setTimeout(checkPlayer, 1000); // Tenta novamente após 1 segundo
             }
+        }
+
+        // Inicia a verificação do player após o script ser carregado
+        s.onload = function() {
             checkPlayer();
         };
     </script>
 
+    <!-- Conteúdo que será exibido após 5 segundos -->
     <div class="container" id="content">
         <p class="offer-text">To get started with <span>AlphaBites</span> today, simply click below and take advantage of this unique special time-limited offer…</p>
         
