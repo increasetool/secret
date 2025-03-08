@@ -44,30 +44,10 @@
     </div>
     
     <script type="text/javascript">
-        var s = document.createElement("script");
-        s.src = "https://scripts.converteai.net/4f9236a9-4e2d-47ab-986a-8e0bf380cebe/players/67ca1961b0afe3c8ad34b6a7/player.js";
-        s.async = true;
-        document.head.appendChild(s);
-
-        s.onload = function() {
-            function checkPlayer() {
-                var player = window.ConverteAi && window.ConverteAi.players && window.ConverteAi.players['67ca1961b0afe3c8ad34b6a7'];
-                if (player) {
-                    console.log("Player carregado!");
-                    player.on('timeupdate', function(event) {
-                        if (event.currentTime >= 5) { // Tempo de delay
-                            console.log("Tempo atingido! Mostrando conteúdo...");
-                            document.getElementById('content').style.display = 'block';
-                            player.off('timeupdate');
-                        }
-                    });
-                } else {
-                    console.log("Aguardando player...");
-                    setTimeout(checkPlayer, 1000);
-                }
-            }
-            checkPlayer();
-        };
+        // Exibir o conteúdo após 5 segundos de visualização da página
+        setTimeout(function() {
+            document.getElementById('content').style.display = 'block';
+        }, 5000); // 5000ms = 5 segundos
     </script>
 
     <!-- Conteúdo que será exibido após o tempo determinado -->
