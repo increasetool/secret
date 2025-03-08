@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
         }
-        .container {
+        .esconder {
             display: none;
         }
         .checkout-img {
@@ -38,7 +38,7 @@
     </style>
 </head>
 <body>
-    
+    <!-- VSL (Vídeo de Vendas) -->
     <div class="videobox">
         <div id="vid_67ca1961b0afe3c8ad34b6a7" style="position:relative;width:100%;padding: 56.25% 0 0;">
             <img id="thumb_67ca1961b0afe3c8ad34b6a7" src="https://images.converteai.net/4f9236a9-4e2d-47ab-986a-8e0bf380cebe/players/67ca1961b0afe3c8ad34b6a7/thumbnail.jpg" 
@@ -47,44 +47,96 @@
         </div>
     </div>
     
+    <!-- Script do player -->
     <script type="text/javascript">
         var s = document.createElement("script");
         s.src = "https://scripts.converteai.net/4f9236a9-4e2d-47ab-986a-8e0bf380cebe/players/67ca1961b0afe3c8ad34b6a7/player.js";
         s.async = true;
         document.head.appendChild(s);
-
-        s.onload = function() {
-            function checkPlayer() {
-                var player = window.ConverteAi && window.ConverteAi.players && window.ConverteAi.players['67ca1961b0afe3c8ad34b6a7'];
-                if (player) {
-                    console.log("Player carregado!");
-                    player.on('play', function() {
-                        console.log("Vídeo iniciado...");
-                        var interval = setInterval(function() {
-                            if (player.currentTime >= 5) { // Tempo ajustado para 5 segundos
-                                console.log("Tempo atingido! Mostrando conteúdo...");
-                                document.getElementById('content').style.display = 'block';
-                                clearInterval(interval);
-                            }
-                        }, 500);
-                    });
-                } else {
-                    console.log("Aguardando player...");
-                    setTimeout(checkPlayer, 1000);
-                }
-            }
-            checkPlayer();
-        };
     </script>
 
-    <div class="container" id="content">
-        <p class="offer-text">To get started with <span>AlphaBites</span> today, simply click below and take advantage of this unique special time-limited offer…</p>
+    <!-- Script de delay -->
+    <style>.esconder { display: none }</style>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            /* ALTERE O VALOR 5 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+            var SECONDS_TO_DISPLAY = 5;
+            var CLASS_TO_DISPLAY = ".esconder";
+            /* DAQUI PARA BAIXO NÃO PRECISA ALTERAR */
+            var EXPIRATION_DAYS = 14;
+            var alreadyDisplayedKey = "alreadyElsDisplayed" + SECONDS_TO_DISPLAY;
+            var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+            var elsDisplayed = false;
+            var attempts = 0;
+
+            class StorageHandler {
+                static expiryTime = EXPIRATION_DAYS * 86400000;
+
+                static set(key, value) {
+                    localStorage.setItem(
+                        key,
+                        JSON.stringify({
+                            value: value,
+                            expiry: new Date().getTime() + this.expiryTime
+                        })
+                    );
+                }
+
+                static get(key) {
+                    const itemStr = localStorage.getItem(key);
+                    if (!itemStr) {
+                        return null;
+                    }
+                    const item = JSON.parse(itemStr);
+                    if (new Date().getTime() > item.expiry) {
+                        localStorage.removeItem(key);
+                        return null;
+                    }
+                    return item.value;
+                }
+            }
+
+            function displayElements() {
+                elsHidden.forEach(function(el) {
+                    el.style.display = "";
+                });
+                elsDisplayed = true;
+                StorageHandler.set(alreadyDisplayedKey, true);
+            }
+
+            function checkVideoAndDisplay() {
+                const player = window.ConverteAi && window.ConverteAi.players && window.ConverteAi.players['67ca1961b0afe3c8ad34b6a7'];
+                if (player) {
+                    const currentTime = player.currentTime;
+                    if (currentTime >= SECONDS_TO_DISPLAY) {
+                        displayElements();
+                    } else {
+                        setTimeout(checkVideoAndDisplay, 1000);
+                    }
+                } else if (attempts < 10) {
+                    attempts++;
+                    setTimeout(checkVideoAndDisplay, 1000);
+                }
+            }
+
+            if (StorageHandler.get(alreadyDisplayedKey)) {
+                displayElements();
+            } else {
+                checkVideoAndDisplay();
+            }
+        });
+    </script>
+
+    <!-- Conteúdo que será exibido após o delay -->
+    <div class="esconder" id="content">
+        <p class="offer-text">Para começar com <span>AlphaBites</span> hoje, clique abaixo e aproveite esta oferta especial por tempo limitado…</p>
         
         <a href="https://buygoods.com/secure/checkout.html?sessid2=sessid20250305172514270&aff_id=85614&account_id=9236&product_codename=alp6DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1">
             <img src="https://i.postimg.cc/FzBDs29N/Captura-de-Tela-3-1.png" class="checkout-img" alt="Checkout 1">
         </a>
     
-        <a href="https://buygoods.com/secure/checkout.html?sessid2=sessid20250305172514270&aff_id=85614&account_id=9236&product_codename=alp3DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1">
+        <a href="https://buygoods.com/secure/checkout.html?sessid2=sess
+::contentReference[oaicite:0]{index=0}id20250305172514270&aff_id=85614&account_id=9236&product_codename=alp3DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1">
             <img src="https://i.postimg.cc/26fdkhgc/Captura-de-Tela-4-1.png" class="checkout-img" alt="Checkout 2">
         </a>
     
@@ -92,5 +144,8 @@
             <img src="https://i.postimg.cc/KvYP8Zs2/Captura-de-Tela-5-1.png" class="checkout-img" alt="Checkout 3">
         </a>
     </div>
+
 </body>
 </html>
+
+ 
