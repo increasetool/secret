@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site com VTurb Player</title>
+    <title>Site Corrigido</title>
     <style>
         body {
             font-family: Tahoma, sans-serif;
@@ -14,7 +14,7 @@
             padding: 0;
         }
         .container {
-            display: none; /* Inicialmente oculto */
+            display: none;
         }
         .checkout-img {
             width: 300px;
@@ -35,28 +35,48 @@
                 font-size: 14px;
             }
         }
-        .videobox {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* Proporção 16:9 para o vídeo */
-        }
-        #vturb-player {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
     </style>
 </head>
 <body>
-
-    <!-- Vídeo VTurb Player -->
+    
     <div class="videobox">
-        <iframe id="vturb-player" src="https://player.vturb.com.br/4f9236a9-4e2d-47ab-986a-8e0bf380cebe" frameborder="0" allowfullscreen></iframe>
+        <div id="vid_67ca1961b0afe3c8ad34b6a7" style="position:relative;width:100%;padding: 56.25% 0 0;">
+            <img id="thumb_67ca1961b0afe3c8ad34b6a7" src="https://images.converteai.net/4f9236a9-4e2d-47ab-986a-8e0bf380cebe/players/67ca1961b0afe3c8ad34b6a7/thumbnail.jpg" 
+                 style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <div id="backdrop_67ca1961b0afe3c8ad34b6a7" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div>
+        </div>
     </div>
+    
+    <script type="text/javascript">
+        var s = document.createElement("script");
+        s.src = "https://scripts.converteai.net/4f9236a9-4e2d-47ab-986a-8e0bf380cebe/players/67ca1961b0afe3c8ad34b6a7/player.js";
+        s.async = true;
+        document.head.appendChild(s);
 
-    <!-- Conteúdo que será exibido após 5 segundos -->
+        s.onload = function() {
+            function checkPlayer() {
+                var player = window.ConverteAi && window.ConverteAi.players && window.ConverteAi.players['67ca1961b0afe3c8ad34b6a7'];
+                if (player) {
+                    console.log("Player carregado!");
+                    player.on('play', function() {
+                        console.log("Vídeo iniciado...");
+                        var interval = setInterval(function() {
+                            if (player.currentTime >= 5) { // Tempo ajustado para 5 segundos
+                                console.log("Tempo atingido! Mostrando conteúdo...");
+                                document.getElementById('content').style.display = 'block';
+                                clearInterval(interval);
+                            }
+                        }, 500);
+                    });
+                } else {
+                    console.log("Aguardando player...");
+                    setTimeout(checkPlayer, 1000);
+                }
+            }
+            checkPlayer();
+        };
+    </script>
+
     <div class="container" id="content">
         <p class="offer-text">To get started with <span>AlphaBites</span> today, simply click below and take advantage of this unique special time-limited offer…</p>
         
@@ -72,44 +92,5 @@
             <img src="https://i.postimg.cc/KvYP8Zs2/Captura-de-Tela-5-1.png" class="checkout-img" alt="Checkout 3">
         </a>
     </div>
-
-    <script type="text/javascript">
-        // Função para monitorar o tempo do vídeo
-        function monitorVideoTime() {
-            const player = document.getElementById('vturb-player');
-            const content = document.getElementById('content');
-
-            // Verifica se o player está carregado
-            if (player) {
-                // Adiciona um listener para o evento de mensagem (postMessage)
-                window.addEventListener('message', function(event) {
-                    // Verifica se a mensagem é do VTurb Player
-                    if (event.origin === 'https://player.vturb.com.br') {
-                        const data = event.data;
-
-                        // Verifica se a mensagem contém o tempo atual do vídeo
-                        if (data && data.currentTime) {
-                            console.log("Tempo assistido:", data.currentTime);
-
-                            // Exibe o conteúdo após 5 segundos
-                            if (data.currentTime >= 5) {
-                                console.log("Tempo atingido! Mostrando conteúdo...");
-                                content.style.display = 'block';
-                                window.removeEventListener('message', arguments.callee); // Remove o listener
-                            }
-                        }
-                    }
-                });
-            } else {
-                console.error("Player não encontrado!");
-            }
-        }
-
-        // Inicia o monitoramento após o player carregar
-        document.getElementById('vturb-player').onload = function() {
-            console.log("Player carregado!");
-            monitorVideoTime();
-        };
-    </script>
 </body>
 </html>
