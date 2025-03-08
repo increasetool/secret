@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch</title>
+    <title>Site Corrigido</title>
     <style>
         body {
             font-family: Tahoma, sans-serif;
@@ -53,15 +53,23 @@
         document.head.appendChild(s);
 
         s.onload = function() {
-            var player = window.ConverteAi && window.ConverteAi.players && window.ConverteAi.players['67ca1961b0afe3c8ad34b6a7'];
-            if (player) {
-                player.on('timeupdate', function(event) {
-                    if (event.currentTime >= 10) { // Altere "30" para o tempo desejado em segundos
-                        document.getElementById('content').style.display = 'block';
-                        player.off('timeupdate'); // Para evitar chamadas repetitivas
-                    }
-                });
+            function checkPlayer() {
+                var player = window.ConverteAi && window.ConverteAi.players && window.ConverteAi.players['67ca1961b0afe3c8ad34b6a7'];
+                if (player) {
+                    console.log("Player encontrado!");
+                    player.on('timeupdate', function(event) {
+                        console.log("Tempo do vídeo:", event.currentTime);
+                        if (event.currentTime >= 10) { // Altere "10" para o tempo desejado em segundos
+                            document.getElementById('content').style.display = 'block';
+                            player.off('timeupdate'); // Para evitar chamadas repetitivas
+                        }
+                    });
+                } else {
+                    console.log("Aguardando player...");
+                    setTimeout(checkPlayer, 1000); // Tenta novamente a cada 1 segundo
+                }
             }
+            checkPlayer();
         };
     </script>
 
