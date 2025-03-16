@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>DTC</title>
+	<title>Home - AlphaBites</title>
 	<meta name="description" content="Alpha Bites">
 	<meta name="keywords" content="alpha bites">
 	<meta property="og:url" name="url" content="https://getalphabites.com/dtc">
@@ -10,1661 +10,584 @@
 	<meta property="twitter:image" name="image" content="https://getalphabites.com/assets/main/img/logo.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<meta charset="utf-8">
-	<link rel="icon" href="../assets/favicon.ico">
+	<link rel="icon" href="assets/favicon.ico">
 	
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet">
 	<!-- End Google Fonts -->
-	
+
 	<!-- Bootstrap -->
-	<link rel="stylesheet" type="text/css" href="../assets/main/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../assets/main/bootstrap/bootstrap-icons.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/main/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/main/bootstrap/bootstrap-icons.min.css">
 	<!-- END Bootstrap -->
-	
+<link rel="preload" href="https://scripts.converteai.net/c0be563c-2a10-4192-86f9-80389366d9dd/players/67c77de370907aee55c004a2/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
+<link rel="preload" href="https://images.converteai.net/c0be563c-2a10-4192-86f9-80389366d9dd/players/67c77de370907aee55c004a2/thumbnail.jpg" as="image">
+<link rel="preload" href="https://cdn.converteai.net/c0be563c-2a10-4192-86f9-80389366d9dd/67c77d10aa8f7c5a79241968/main.m3u8" as="fetch">
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://api.vturb.com.br">
 	<!-- Main Styles -->
-	<link rel="stylesheet" type="text/css" href="../assets/main/css/main_new.css">
+	<link rel="stylesheet" type="text/css" href="assets/main/css/main_new.css">
 	<!-- END Main Styles -->
 
-	<style> 
-		.aff-fnl {
-			display: none !important;
+	<style>.sticky-nav {
+			background-color: var(--text-color);
 		}
-
-		.btn-submit {
-			transition: all 0.3s ease;
-			animation: pulse-animation 1.5s infinite;
-			font-size: 20px;
-			font-weight: 600;
-			background-color: #000;
-			color: #fff !important;
-			border: #000;
-		}
-
-		.btn-submit:hover,
-		.btn-submit:focus,
-		.btn-submit:active {
-			transition: .3s;
-			animation: none;
-			background-color: #000;
-		}
-
-		#form-dtc-2potes {
-			background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));
-		}
-
-		@keyframes pulse-animation {
-			0% {
-				transform: scale(1);
-			}
-			50% {
-				transform: scale(1.03); /* Aumenta um pouco o tamanho */
-			}
-			100% {
-				transform: scale(1);
+		@media (max-width: 991px) {
+			header {
+				background-color: var(--text-color);
 			}
 		}
-
-		/* Purchases Notifications */
-		.purchases-disclaimer {
-			position: fixed;
-			right: -800px;
-			bottom: 20px;
-			padding: .5rem 1rem;
-			background-color: var(--secondary-color);
-			color: white;
-			border-radius: 8px;
-			font-size: 1em;
-			font-style: italic;
-			box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
-			border: 3px solid white;
-			transition: .6s;
-			z-index: 999;
-		}
-		.purchases-box {
+    .atomicat-delay {
+      display: none;
+    }
+		.bottle-overlay {
+			position: absolute;
 			display: flex;
-			flex-wrap: nowrap;
-			gap: 10px;
 			align-items: center;
+			width: 25%;
+			height: 100%;
+			background-color: var(--secondary-color);
+			border-left: 10px solid var(--primary-color);
+			top: 0;
+			right: 0;
 		}
-		.purchases-box img {
-			max-width: 70px;
-		}
-		.purchased-bottle {
-			background: white;
-			border-radius: 50%;
+		.bottle-overlay img {
+			position: relative;
+			margin-left: -40%;
+			transform: rotateZ(-8deg);
+			z-index: 3;
 		}
 		@media (max-width: 767px) {
-			.purchases-disclaimer {
-				font-size: .85rem;
-				padding: .25rem .5rem;
-				max-width: 220px;
+			.bottle-overlay {
+				position: initial;
+				width: 100%;
+				border-left: 0;
+				border-top: 10px solid var(--primary-color);
+				margin-top: 7rem;
+				text-align: center;
 			}
-			.purchases-box img {
-				max-width: 40px;
+			.bottle-overlay img {
+				margin: -9rem auto 1rem;
+				transform: none;
 			}
 		}
+
+		.couple-bg-banner {
+			background-image: url('assets/pages/home/img/couple-bg-banner.webp');
+			background-size: contain;
+			background-position: 65vw 0vw;
+			background-repeat: no-repeat;
+		}
+		@media (max-width: 1199px) {
+			.couple-bg-banner {
+				background-position: 55vw 0vw;
+			}
+		}
+		@media (max-width: 767px) {
+			.couple-bg-banner {
+				background-image: none;
+			}
+		}
+
+		#ingredients figure {
+			overflow: hidden;
+			border-right: 4px solid var(--primary-color);
+		}
+		#ingredients img {
+			max-width: 100px;
+		}
+		#hidden-section {
+            display: none; /* Section starts hidden */
+        }
+
+		/* ====================== COUNT IMAGE ====================== */
+		.count-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 16px 0 48px 0;
+        background-color: white;
+      }
+
+      @media (max-width: 768px) {
+        .count-img {
+          margin-top: 24px;
+        }
+      }
+
+      .count-img-text {
+        padding-top: 8px;
+        font-weight: 800;
+        color: #212529;
+        font-size: 28px;
+      }
+
+      @media (max-width: 425px) {
+        .count-img-text {
+          font-size: 24px;
+        }
+      }
+
+      .count-img-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        padding-top: 24px;
+        opacity: 0.5;
+      }
+
+      @media (max-width: 768px) {
+        .count-img-img {
+          width: 516px;
+          flex-wrap: wrap;
+          gap: 16px;
+        }
+      }
+
+      @media (max-width: 425px) {
+        .count-img-img {
+          width: 350px;
+          flex-wrap: wrap;
+          gap: 16px;
+        }
+      }
+
+      .count-img-img img {
+        width: 100px;
+        height: 100px;
+      }
+	   /* ====================== MODAL LATERAL ====================== */
+	   .modal-right {
+        background-color: #216C56;
+        border-radius: 999px;
+        padding-inline: 16px;
+        position: fixed;
+        bottom: 32px;
+        right: -800px;
+        z-index: 1000;
+        transition: right 0.5s ease-in-out;
+      }
+
+      @media (max-width: 425px) {
+        .modal-right {
+          padding-inline: 12px;
+        }
+      }
+
+      .modal-right span {
+        color: white;
+        font-size: 20px;
+      }
+
+      @media (max-width: 425px) {
+        .modal-right span {
+          font-size: 16px;
+        }
+      }
+
+      .modal-right-box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        padding: 8px 24px;
+      }
+
+      @media (max-width: 425px) {
+        .modal-right-box {
+          gap: 12px;
+          padding: 6px 16px;
+        }
+      }
+
+      .modal-right-text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        font-weight: 500;
+      }
+
+      .modal-right-img {
+        width: 84px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-right-img img {
+        width: 100%;
+      }
+
+      .modal-right-infos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      /* ====================== MODAL LATERAL  ====================== */
 	</style>
-
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-');</script>
-	<!-- End Google Tag Manager -->
-
-	<!-- VisiSmart Code - DO NOT MODIFY--><script async type='text/javascript'>window.visiopt_code=window.visiopt_code||(function(){var visi_wid=910,visi_pid=112,visi_flicker_time=4000,visi_flicker_element='html',c=false,d=document,visi_fn={begin:function(){var a=d.getElementById('visi_flicker');if(!a){var a=d.createElement('style'),b=visi_flicker_element?visi_flicker_element+'{opacity:0!important;background:none!important;}':'',h=d.getElementsByTagName('head')[0];a.setAttribute('id','visi_flicker');a.setAttribute('type','text/css');if(a.styleSheet){a.styleSheet.cssText=b;}else{a.appendChild(d.createTextNode(b));}h.appendChild(a);}},complete:function(){c=true;var a=d.getElementById('visi_flicker');if(a){a.parentNode.removeChild(a);}},completed:function(){return c;},pack:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){visi_fn.complete();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){visi_fn.begin();setTimeout(function(){visi_fn.complete()},visi_flicker_time);this.pack('https://visiopt.com/client/js_test/test.'+visi_wid+'.'+visi_pid+'.js');return true;}};window.visiopt_code_status=visi_fn.init();return visi_fn;}());</script><!--End Of VisiSmart Code -->
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-');</script>
-<!-- End Google Tag Manager -->
-
 </head>
 <body>
 
-  <div class="modal fade show" id="modalExit" tabindex="-1" aria-labelledby="modalExitlLabel" style="display: none;" aria-modal="true" role="dialog">
-		<div class="modal-dialog" style="max-width: 600px;">
-			<div class="modal-content" style="border: 3px solid #c99225;background-color: #f8edd7;">
-				<div class="modal-body p-2 p-md-4">
-					<h2 class="text-center fs-2 fw-bold">WAIT! Take advantage of this one-time offer before you leave.</h2>
-					<p class="text-center">Sign up below and get an extra <b style="color: var(--primary-color-dark);">40% OFF!</b></p>
 
-					<form id="form-dtc-2potes" class="my-4 rounded p-3 p-md-4">
-						<div class="d-flex flex-column gap-2">
-						  <input type="text" id="firstName" class="p-2" name="firstName" value="" required style="height: 40px;" placeholder="Name">
-						</div>
-
-						<div class="d-flex flex-column gap-2 mt-2">
-						  <input type="email" id="email" class="p-2" name="email" value="" required style="height: 40px;" placeholder="E-mail">
-						</div>
-
-						
-
-						<button type="submit" class="btn btn-primary w-100 mt-2 text-dark btn-submit">Claim My Discount Now</button>
-				  </form>
-
-					<div style="background-color: #fff;" class="p-3 rounded">
-						<p class="text-center fs-5 mb-3">Get your <b style="color: var(--primary-color-dark);">AlphaBites</b> with this offer:<br> <b>Buy 6 + Get 3 Free!</b></p>
-
-						<div class="row pt-2">
-							<div class="align-self-center col-12 col-md-5 h-100 text-center">
-									<img class="mb-3 mb-md-0" src="../assets/main/products/img/6bottles3.png" alt="" width="300">
-							</div>
-							<div class="align-self-center cart_right col-12 col-md-7">
-								<div class="mb-2 text-body savings" style="font-size: .85em;">
-									<div class="p-2 mb-1 text-center text-md-start" style="border-bottom: 1px solid #ccc;">
-										<b><i class="bi bi-check-circle-fill"></i>&nbsp;180-Day Satisfaction Guarantee</b>
-									</div>
-									<div class="p-2 text-center text-md-start" style="border-bottom: 1px solid #ccc;">
-										<b><i class="bi bi-check-circle-fill"></i>&nbsp;Premium Quality</b>
-									</div>
-									<div class="p-2 pb-0 text-center text-md-start" style="">
-										<b><i class="bi bi-check-circle-fill"></i>&nbsp;+2 Free Bonuses</b>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="text-center mx-auto mt-3 p-2">
-						<a href="javascript:void(0);" data-bs-dismiss="modal" class="d-inline-block text-decoration-none buylink" style="color: var(--text-color); font-size: 14px;"><b>NOTE:</b> This offer is only available HERE and NOW… We do not sell on Amazon, Target, Walmart or any other online store. If you close this window, you'll miss your chance forever, and you won't be able to secure this price again!</a>
-					</div>
-				</div>
+		<!-- =============== MODAL LATERAL =============== -->
+		<div class="modal-right">
+		  <div class="modal-right-box">
+			<div class="modal-right-img">
+			  <img id="one-bottle" src="https://getalphabites.com/assets/main/products/img/img-2-bottles.png" alt="">
+			  <img id="three-bottles" src="https://getalphabites.com/assets/main/products/img/img-3-bottles.png" alt="">
+			  <img id="six-bottles" src="https://getalphabites.com/assets/main/products/img/img-6-bottles.png" alt="">
 			</div>
+  
+			<div class="modal-right-text">
+			  <div>
+				<span id="customer-name">William</span>
+				<span id="customer-location">Ohio</span>
+			  </div>
+			  <div>
+				<span style="color: #EED209; font-weight: 700;">Just Bough</span>
+				<span id="items-purchased" style="color: #EED209; font-weight: 700;">3 Bootles</span>
+			  </div>
+			  <div>
+				<i class="bi bi-patch-check" style="color: white; font-size: 24px;"></i>
+				<span> Verified</span>
+			  </div>
+			</div>
+		  </div>
 		</div>
-	</div>
+		<!-- =============== MODAL LATERAL =============== -->
 
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+	<!-- Video Element -->
+    <header class="py-4" style="background-color: #000000;">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+  
+              <!-- VSL -->
+<div id="vid_67c77de370907aee55c004a2" style="position: relative; width: 100%; padding: 56.25% 0 0;"> <img id="thumb_67c77de370907aee55c004a2" src="https://images.converteai.net/c0be563c-2a10-4192-86f9-80389366d9dd/players/67c77de370907aee55c004a2/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail"> <div id="backdrop_67c77de370907aee55c004a2" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div> </div> <script type="text/javascript" id="scr_67c77de370907aee55c004a2"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/c0be563c-2a10-4192-86f9-80389366d9dd/players/67c77de370907aee55c004a2/player.js", s.async=!0,document.head.appendChild(s); </script>
+</header>
 
-	
-	
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+    <style>.esconder { display: none }</style>
 
-	<header class="py-4" style="background-color: var(--secondary-color);">
-		<div class="container text-white">
-			<div class="d-flex gap-2 gap-sm-4 justify-content-center align-items-center position-relative mx-auto" style="width: fit-content;">
-				<div class="w-100 position-absolute" style="height: 1px; top: calc(50% - .5px); background-color: var(--third-color);"></div>
-				<div class="position-relative fw-bold" style="background-color: var(--primary-color-dark); padding: 4px 16px; border: 1px solid var(--third-color); white-space: nowrap; color: white; border-radius: .2em;">Step 1</div>
-				<div class="position-relative" style="background-color: var(--secondary-color); padding: 4px 16px; border: 1px solid var(--primary-color); white-space: nowrap; border-radius: .2em;">Step 2</div>
-				<div class="position-relative" style="background-color: var(--secondary-color); padding: 4px 16px; border: 1px solid var(--primary-color); white-space: nowrap; border-radius: .2em;">Step 3</div>
-			</div>
-			<div class="text-center mt-3">
-				<h1 class="fw-bold fs-1"><span style="color: var(--primary-color);">STEP 1:</span> SELECT YOUR DISCOUNT PACKAGE</h1>
-				<div class="mx-auto mb-3" style="height: 4px; max-width: 100px; background-color: var(--primary-color);"></div>
-				<!--<div class="d-flex flex-wrap gap-1 align-items-center justify-content-center">
-					<b>Average Customer Rating 4.9</b>
-					<div class="d-flex gap-1 stars">
-						<i class="bi bi-star-fill" style="color: var(--contrast-color);"></i>
-						<i class="bi bi-star-fill" style="color: var(--contrast-color);"></i>
-						<i class="bi bi-star-fill" style="color: var(--contrast-color);"></i>
-						<i class="bi bi-star-fill" style="color: var(--contrast-color);"></i>
-						<i class="bi bi-star-fill" style="color: var(--contrast-color);"></i>
-					</div>
-					based on 2000+ reviews
-				</div>-->
-			</div>
-		</div>
-	</header>
-	
-	<div class="py-5" style="background-color: var(--secondary-color);"></div>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+    var SECONDS_TO_DISPLAY = 2121;
+    var CLASS_TO_DISPLAY = ".esconder";
+    var attempts = 0;
+    var elsHiddenList = [];
+    var elsDisplayed = false;
+    var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+    var alreadyDisplayedKey = "alreadyElsDisplayed" + SECONDS_TO_DISPLAY;
+    var alreadyElsDisplayed = null;
+    try {
+      alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+    } catch(e) {
+      console.warn('Failed to read data from localStorage: ', e);
+    }
+    setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
+    var showHiddenElements = function () {
+    elsDisplayed = true;
+    elsHiddenList.forEach((e) => e.style.display = "block");
+    try {
+    localStorage.setItem(alreadyDisplayedKey, true);
+    } catch (e) {
+    console.warn('Failed to save data in localStorage: ', e);
+    }
+    }
+    var startWatchVideoProgress = function () {
+    if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+    if (attempts >= 10) return;
+    attempts += 1;
+    return setTimeout(function () { startWatchVideoProgress() }, 1000);
+    }
+    smartplayer.instances[0].on('timeupdate', () => {
+    if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+    if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+    showHiddenElements();
+    })
+    }
+    if (alreadyElsDisplayed === 'true') {
+    setTimeout(function () { showHiddenElements(); }, 100);
+    } else {
+    startWatchVideoProgress()
+    }
+    });
+    </script>
 
-	<div id="order-now"></div>
-	
-	<section id="products" class="pb-4 pb-md-5" style="margin-top: -6em;">
-		<div class="container">
-			<div class="row align-items-center">
-				
-				<!-- 2 Bottles -->
-				<div class="col-12 col-md-4 mb-3 order-3 order-md-1">
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp2DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRj&vid1=dtcva&vid3=va&fb=1" title="2 Bottles" class="d-block rounded-3 shadow item main-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
-								<h3 class="my-0 fw-bold">Try Two</h3>
-								<p class="mb-0 fs-5">60 Days, 2 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>79</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $436!</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$594</s> <b>$158</b>
-								<br>
-								<b>+9.99 SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>Try Two</b><br><span style="font-size: .8em;">60 days, 2 bottles</span></div>
-										<img src="../assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>79</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $436!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals lh-1" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$358</s>&nbsp;<b>$158</b>
-											<br>
-											<b>+9.99 SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="p-2">
-								<div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-						</div>
-					</a>
-
-					<!-- 2 Bottles Affiliate RFNV -->
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp2DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtdHNsMi1lcw==&vid1=dtcva&vid3=va&fb=1" title="2 Bottles" class="d-block rounded-3 shadow item aff-fnl rfnv-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
-								<h3 class="my-0 fw-bold">Try Two</h3>
-								<p class="mb-0 fs-5">60 Days, 2 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>79</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $436!</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$594</s> <b>$158</b>
-								<br>
-								<b>+9.99 SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>Try Two</b><br><span style="font-size: .8em;">60 days, 2 bottles</span></div>
-										<img src="../assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>79</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $436!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals lh-1" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$358</s>&nbsp;<b>$158</b>
-											<br>
-											<b>+9.99 SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="p-2">
-								<div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-						</div>
-					</a>
-					<!-- END 2 Bottles Affiliate RFNV -->
-
-				</div>
-				<!-- END 2 Bottles -->
-
-				<!-- 6 Bottles -->
-				<div class="col-12 col-md-4 mb-3 order-1 order-md-2">
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp6DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1" title="6 Bottles" class="d-block rounded-3 shadow item promo main-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: var(--primary-color-light);">
-							<div class="py-3 pb-2" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
-								<h3 class="my-0 fw-bold">Best Value!</h3>
-								<p class="mb-0 fs-5">180 Days, 6 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 220px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>49</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 text-body savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $1488!</b>
-								</div>
-								<div class="p-2 mb-1" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;BIGGEST DISCOUNT</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-3 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s> <b>$294</b>
-								<br>
-								<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 overflow-hidden" style="background-color: var(--primary-color-light);">
-							<div class="pt-1 fw-bold item-header" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); font-size: .9em;">BEST VALUE!</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 14px;"></div>
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>6 Bottles</b><br><span style="font-size: .8em;">180 Day Supply</span></div>
-										<img src="../assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>49</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $1488!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;BIGGEST DISCOUNT</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s>&nbsp;<b>$294</b>
-											<br>
-											<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary w-100 mb-2 rounded-3 button-bg promo">
-									<div><i class="bi bi-cart-plus-fill"></i>&nbsp;<b>BUY NOW</b></div>
-								</div>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); rotate: 180deg; margin: -1px auto 0; background: var(--primary-color); height: 14px;"></div>
-						</div>
-					</a>
-
-					<!-- 6 Bottles Affiliate RFNV -->
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp6DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtdHNsMi1lcw==&vid1=dtcva&vid3=va&fb=1" title="6 Bottles" class="d-block rounded-3 shadow item promo aff-fnl rfnv-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: var(--primary-color-light);">
-							<div class="py-3 pb-2" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
-								<h3 class="my-0 fw-bold">Best Value!</h3>
-								<p class="mb-0 fs-5">180 Days, 6 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 220px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>49</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 text-body savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $1488!</b>
-								</div>
-								<div class="p-2 mb-1" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;BIGGEST DISCOUNT</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-3 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s> <b>$294</b>
-								<br>
-								<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 overflow-hidden" style="background-color: var(--primary-color-light);">
-							<div class="pt-1 fw-bold item-header" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); font-size: .9em;">BEST VALUE!</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 14px;"></div>
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>6 Bottles</b><br><span style="font-size: .8em;">180 Day Supply</span></div>
-										<img src="../assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>49</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $1488!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;BIGGEST DISCOUNT</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s>&nbsp;<b>$294</b>
-											<br>
-											<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary w-100 mb-2 rounded-3 button-bg promo">
-									<div><i class="bi bi-cart-plus-fill"></i>&nbsp;<b>BUY NOW</b></div>
-								</div>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); rotate: 180deg; margin: -1px auto 0; background: var(--primary-color); height: 14px;"></div>
-						</div>
-					</a>
-					<!-- END 6 Bottles Affiliate RFNV -->
-
-				</div>
-				<!-- END 6 Bottles -->
-
-				<!-- 3 Bottles -->
-				<div class="col-12 col-md-4 mb-3 order-2 order-md-3">
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp3DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1" title="3 Bottles" class="d-block rounded-3 shadow item main-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
-								<h3 class="my-0 fw-bold">Good Value</h3>
-								<p class="mb-0 fs-5">90 Days, 3 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>69</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $684!</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s> <b>$207</b>
-								<br>
-								<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>Good Value</b><br><span style="font-size: .8em;">90 days, 3 bottles</span></div>
-										<img src="../assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>69</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $684!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals lh-1" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s>&nbsp;<b>$207</b>
-											<br>
-											<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="p-2">
-								<div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-						</div>
-					</a>
-
-					<!-- 3 Bottles Affiliate RFNV -->
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp3DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtdHNsMi1lcw==&vid1=dtcva&vid3=va&fb=1" title="3 Bottles" class="d-block rounded-3 shadow item aff-fnl rfnv-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
-								<h3 class="my-0 fw-bold">Good Value</h3>
-								<p class="mb-0 fs-5">90 Days, 3 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>69</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $684!</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s> <b>$207</b>
-								<br>
-								<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>Good Value</b><br><span style="font-size: .8em;">90 days, 3 bottles</span></div>
-										<img src="../assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>69</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $684!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals lh-1" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s>&nbsp;<b>$207</b>
-											<br>
-											<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="p-2">
-								<div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-						</div>
-					</a>
-					<!-- END 3 Bottles Affiliate RFNV -->
-
-				</div>
-				<!-- END 3 Bottles -->
-				
-			</div>
+	<div class="esconder">
+	<section class="py-5" style="background-color: #000000;">
+		<div class="container text-white text-center">
+			<h2 class="fw-bold m-0">To get started with <span style="color: var(--primary-color);">AlphaBites</span> today, simply click below and take advantage of this unique special time-limited offer…</h2>
 		</div>
 	</section>
 
+	
+	<div class="triangle"></div>
+
+	<div id="order-now"></div>
+	
+	<section id="products" class="pb-4 pb-md-5">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <!-- 2 Bottles -->
+            <div class="col-12 col-md-4 mb-3 order-3 order-md-1">
+                <a id="buy-button-2" href="https://buygoods.com/secure/checkout.html?aff_id=58744&sid=177pqk9l5ds&vid1=dtcva&vid3=va&account_id=9236&product_codename=alp2&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwv" title="2 Bottles" class="d-block rounded-3 shadow item" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
+                    <!-- desktop -->
+                    <div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
+                        <div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
+                            <h3 class="my-0 fw-bold">Try Two</h3>
+                            <p class="mb-0 fs-5">60 Days, 2 Bottles</p>
+                        </div>
+                        <div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
+                        <img src="https://getalphabites.com/assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
+                        <div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
+                            <b style="font-size: 4.6em;"><sup class="fs-3">$</sup>79</b>
+                            <b class="text-start opacity-75">PER<br>BOTTLE</b>
+                        </div>
+                        <div class="mb-2 savings" style="font-size: .85em;">
+                            <div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+                                <b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i> YOU SAVE $436!</b>
+                            </div>
+                            <div class="p-2" style="border-bottom: 1px solid #ccc;">
+                                <b><i class="bi bi-check-circle-fill"></i> 180 DAYS GUARANTEE</b>
+                            </div>
+                        </div>
+                        <div class="px-2">
+                            <div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
+                        </div>
+                        <img src="assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
+                        <div class="px-2 mb-3 totals">
+                            Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$594</s> <b>$158</b>
+                            <br>
+                            <b>+9.99 SHIPPING</b>
+                        </div>
+                    </div>
+                    <!-- mobile -->
+                    <div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-6 p-1">
+                                    <div class="mb-1 lh-1 supply"><b>Try Two</b><br><span style="font-size: .8em;">60 days, 2 bottles</span></div>
+                                    <img src="https://getalphabites.com/assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
+                                </div>
+                                <div class="col-6 p-1">
+                                    <div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
+                                        <b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>79</b>
+                                        <b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
+                                    </div>
+                                    <div class="mb-2 lh-1 savings" style="font-size: .7em;">
+                                        <div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+                                            <b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i> YOU SAVE $436!</b>
+                                        </div>
+                                        <div class="p-1" style="border-bottom: 1px solid #ccc;">
+                                            <b><i class="bi bi-check-circle-fill"></i> 180 DAYS GUARANTEE</b>
+                                        </div>
+                                    </div>
+                                    <div class="totals lh-1" style="font-size: .8em;">
+                                        Total:<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$358</s><b>$158</b>
+                                        <br>
+                                        <b>+9.99 SHIPPING</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- END 2 Bottles -->
+
+            <!-- 6 Bottles -->
+            <div class="col-12 col-md-4 mb-3 order-1 order-md-2">
+                <a id="buy-button-6" href="https://buygoods.com/secure/checkout.html?aff_id=58744&sid=177pqk9l5ds&vid1=dtcva&vid3=va&account_id=9236&product_codename=alp6&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwv" title="6 Bottles" class="d-block rounded-3 shadow item promo" style="text-decoration: none; padding: 3px; color: var(--text-color); background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
+                    <!-- desktop -->
+                    <div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: var(--primary-color-light);">
+                        <div class="py-3 pb-2" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
+                            <h3 class="my-0 fw-bold">Best Value!</h3>
+                            <p class="mb-0 fs-5">180 Days, 6 Bottles</p>
+                        </div>
+                        <div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 30px;"></div>
+                        <img src="https://getalphabites.com/assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 220px;">
+                        <div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
+                            <b style="font-size: 4.6em;"><sup class="fs-3">$</sup>49</b>
+                            <b class="text-start opacity-75">PER<br>BOTTLE</b>
+                        </div>
+                        <div class="mb-2 text-body savings" style="font-size: .85em;">
+                            <div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+                                <b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i> YOU SAVE $1488!</b>
+                            </div>
+                            <div class="p-2 mb-1" style="border-bottom: 1px solid #ccc;">
+                                <b><i class="bi bi-check-circle-fill"></i> BIGGEST DISCOUNT</b>
+                            </div>
+                            <div class="p-2" style="border-bottom: 1px solid #ccc;">
+                                <b><i class="bi bi-check-circle-fill"></i> 180 DAYS GUARANTEE</b>
+                            </div>
+                        </div>
+                        <div class="px-2">
+                            <div class="btn btn-primary rounded-3 button-bg promo fs-3 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
+                        </div>
+                        <img src="assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
+                        <div class="px-2 mb-3 totals">
+                            Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s> <b>$294</b>
+                            <br>
+                            <b>+<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
+                        </div>
+                    </div>
+                    <!-- mobile -->
+                    <div class="d-md-none text-center rounded-3 overflow-hidden" style="background-color: var(--primary-color-light);">
+                        <div class="pt-1 fw-bold item-header" style="background-image: linear-gradient(to right, var(--primary-color), var(--light-color), var(--primary-color)); font-size: .9em;">BEST VALUE!</div>
+                        <div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color), var(--light-color), var(--primary-color)); height: 14px;"></div>
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-6 p-1">
+                                    <div class="mb-1 lh-1 supply"><b>6 Bottles</b><br><span style="font-size: .8em;">180 Day Supply</span></div>
+                                    <img src="https://getalphabites.com/assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 200px;">
+                                </div>
+                                <div class="col-6 p-1">
+                                    <div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
+                                        <b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>49</b>
+                                        <b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
+                                    </div>
+                                    <div class="mb-2 lh-1 savings" style="font-size: .7em;">
+                                        <div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+                                            <b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i> YOU SAVE $1488!</b>
+                                        </div>
+                                        <div class="p-1" style="border-bottom: 1px solid #ccc;">
+                                            <b><i class="bi bi-check-circle-fill"></i> BIGGEST DISCOUNT</b>
+                                        </div>
+                                        <div class="p-1" style="border-bottom: 1px solid #ccc;">
+                                            <b><i class="bi bi-check-circle-fill"></i> 180 DAYS GUARANTEE</b>
+                                        </div>
+                                    </div>
+                                    <div class="totals" style="font-size: .8em;">
+                                        Total:<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s><b>$294</b>
+                                        <br>
+                                        <b>+<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-2">
+                            <div class="btn btn-primary w-100 mb-2 rounded-3 button-bg promo">
+                                <div><i class="bi bi-cart-plus-fill"></i><b>BUY NOW</b></div>
+                            </div>
+                        </div>
+                        <div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); rotate: 180deg; margin: -1px auto 0; background: var(--primary-color); height: 14px;"></div>
+                    </div>
+                </a>
+            </div>
+            <!-- END 6 Bottles -->
+
+            <!-- 3 Bottles -->
+            <div class="col-12 col-md-4 mb-3 order-2 order-md-3">
+                <a id="buy-button-3" href="https://buygoods.com/secure/checkout.html?aff_id=58744&sid=177pqk9l5ds&vid1=dtcva&vid3=va&account_id=9236&product_codename=alp3&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwv" title="3 Bottles" class="d-block rounded-3 shadow item" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
+                    <!-- desktop -->
+                    <div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
+                        <div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
+                            <h3 class="my-0 fw-bold">Good Value</h3>
+                            <p class="mb-0 fs-5">90 Days, 3 Bottles</p>
+                        </div>
+                        <div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
+                        <img src="https://getalphabites.com/assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
+                        <div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
+                            <b style="font-size: 4.6em;"><sup class="fs-3">$</sup>69</b>
+                            <b class="text-start opacity-75">PER<br>BOTTLE</b>
+                        </div>
+                        <div class="mb-2 savings" style="font-size: .85em;">
+                            <div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+                                <b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i> YOU SAVE $684!</b>
+                            </div>
+                            <div class="p-2" style="border-bottom: 1px solid #ccc;">
+                                <b><i class="bi bi-check-circle-fill"></i> 180 DAYS GUARANTEE</b>
+                            </div>
+                        </div>
+                        <div class="px-2">
+                            <div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
+                        </div>
+                        <img src="assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
+                        <div class="px-2 mb-3 totals">
+                            Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s> <b>$207</b>
+                            <br>
+                            <b>+<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
+                        </div>
+                    </div>
+                    <!-- mobile -->
+                    <div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-6 p-1">
+                                    <div class="mb-1 lh-1 supply"><b>Good Value</b><br><span style="font-size: .8em;">90 days, 3 bottles</span></div>
+                                    <img src="https://getalphabites.com/assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
+                                </div>
+                                <div class="col-6 p-1">
+                                    <div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
+                                        <b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>69</b>
+                                        <b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
+                                    </div>
+                                    <div class="mb-2 lh-1 savings" style="font-size: .7em;">
+                                        <div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+                                            <b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i> YOU SAVE $684!</b>
+                                        </div>
+                                        <div class="p-1" style="border-bottom: 1px solid #ccc;">
+                                            <b><i class="bi bi-check-circle-fill"></i> 180 DAYS GUARANTEE</b>
+                                        </div>
+                                    </div>
+                                    <div class="totals lh-1" style="font-size: .8em;">
+                                        Total:<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s><b>$207</b>
+                                        <br>
+                                        <b>+<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- END 3 Bottles -->
+            
+        </div>
+    </div>
+</section>
+	<!--Galantia-->
 	<section id="guarantee" class="py-5 mb-5">
 		<div class="py-3"></div>
-		<div class="position-relative" style="background-color: var(--secondary-color);">
-			<div class="w-100 position-relative" style="background-image: url(../assets/pages/home/img/brush-top-w.svg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 100px; transform: rotateX(180deg) rotateY(180deg); z-index: 2;"></div>
+		<div class="position-relative" style="background-color: #000000;">
+			<div class="w-100 position-relative" style="background-image: url(assets/pages/home/img/brush-top-w.svg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 100px; transform: rotateX(180deg) rotateY(180deg); z-index: 2;"></div>
 			<div class="container text-center">
 				<div class="rounded-3 p-2 p-sm-3 position-relative shadow" style="background-color: var(--light-color); margin: -10rem auto; z-index: 3;">
 					<div class="rounded-3 p-3 p-sm-4 bg-white" style="border: 2px solid var(--primary-color);">
-						<img src="../assets/main/img/guarantee-seal.webp" alt="Guarantee" class="mb-4" style="max-width: 200px;">
+						<img src="assets/main/img/guarantee-seal.webp" alt="Guarantee" class="mb-4" style="max-width: 200px;">
 						<h2 class="fw-bold mb-4">100% Satisfaction Guarantee</h2>
 						<p>Try AlphaBites with the Peace of Mind of Our 180-Day Total Satisfaction Guarantee!</p>
-						<p>We're so confident that you'll love the results from AlphaBites that we want to take all the risk out of your purchase decision. That's why we offer an unconditional 6-month (180-day) guarantee. So, if for any reason you feel it's not for you, just send everything back within 180 days, and you'll get every penny back. No fine print, no pressure. It's our promise of transparency and commitment to your satisfaction!</p>
+						<p>We're so confident that you'll love the results from AlphaBites that we want to take all the risk out of your purchase decision. That's why we offer an unconditional 6-month (180-day) guarantee. So, if for any reason you feel it's not for you, just send everything back within 180 DAYS, and you'll get every penny back. No fine print, no pressure. It's our promise of transparency and commitment to your satisfaction!</p>
 					</div>
 				</div>
 			</div>
-			<div class="w-100 position-relative" style="background-image: url(../assets/pages/home/img/brush-top-w.svg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 100px; z-index: 2;"></div>
+			<div class="w-100 position-relative" style="background-image: url(assets/pages/home/img/brush-top-w.svg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 100px; z-index: 2;"></div>
 		</div>
 		<div class="py-4"></div>
 	</section>
 
-	<section class="py-5" style="background-color: var(--secondary-color);">
-		<div class="container text-white text-center">
-			<h2 class="fw-bold m-0">To get started with <span style="color: var(--primary-color);">AlphaBites</span> today, simply click below and take advantage of this unique special time-limited offer…</h2>
-		</div>
-	</section>
-	<div class="triangle"></div>
-
-	<div id="order-now-2"></div>
-	
-	<section id="products" class="pb-4 pb-md-5">
-		<div class="container">
-			<div class="row align-items-center">
-				
-				<!-- 2 Bottles -->
-				<div class="col-12 col-md-4 mb-3 order-3 order-md-1">
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp2DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRj&vid1=dtcva&vid3=va&fb=1" title="2 Bottles" class="d-block rounded-3 shadow item main-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
-								<h3 class="my-0 fw-bold">Try Two</h3>
-								<p class="mb-0 fs-5">60 Days, 2 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>79</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $436!</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$594</s> <b>$158</b>
-								<br>
-								<b>+9.99 SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>Try Two</b><br><span style="font-size: .8em;">60 days, 2 bottles</span></div>
-										<img src="../assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>79</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $436!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals lh-1" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$358</s>&nbsp;<b>$158</b>
-											<br>
-											<b>+9.99 SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="p-2">
-								<div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-						</div>
-					</a>
-
-					<!-- 2 Bottles Affiliate RFNV -->
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp2DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtdHNsMi1lcw==&vid1=dtcva&vid3=va&fb=1" title="2 Bottles" class="d-block rounded-3 shadow item aff-fnl rfnv-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
-								<h3 class="my-0 fw-bold">Try Two</h3>
-								<p class="mb-0 fs-5">60 Days, 2 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>79</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $436!</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$594</s> <b>$158</b>
-								<br>
-								<b>+9.99 SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>Try Two</b><br><span style="font-size: .8em;">60 days, 2 bottles</span></div>
-										<img src="../assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>79</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $436!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals lh-1" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$358</s>&nbsp;<b>$158</b>
-											<br>
-											<b>+9.99 SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="p-2">
-								<div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-						</div>
-					</a>
-					<!-- END 2 Bottles Affiliate RFNV -->
-
-				</div>
-				<!-- END 2 Bottles -->
-
-				<!-- 6 Bottles -->
-				<div class="col-12 col-md-4 mb-3 order-1 order-md-2">
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp6DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1" title="6 Bottles" class="d-block rounded-3 shadow item promo main-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: var(--primary-color-light);">
-							<div class="py-3 pb-2" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
-								<h3 class="my-0 fw-bold">Best Value!</h3>
-								<p class="mb-0 fs-5">180 Days, 6 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 220px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>49</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 text-body savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $1488!</b>
-								</div>
-								<div class="p-2 mb-1" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;BIGGEST DISCOUNT</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-3 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s> <b>$294</b>
-								<br>
-								<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 overflow-hidden" style="background-color: var(--primary-color-light);">
-							<div class="pt-1 fw-bold item-header" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); font-size: .9em;">BEST VALUE!</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 14px;"></div>
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>6 Bottles</b><br><span style="font-size: .8em;">180 Day Supply</span></div>
-										<img src="../assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>49</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $1488!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;BIGGEST DISCOUNT</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s>&nbsp;<b>$294</b>
-											<br>
-											<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary w-100 mb-2 rounded-3 button-bg promo">
-									<div><i class="bi bi-cart-plus-fill"></i>&nbsp;<b>BUY NOW</b></div>
-								</div>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); rotate: 180deg; margin: -1px auto 0; background: var(--primary-color); height: 14px;"></div>
-						</div>
-					</a>
-
-					<!-- 6 Bottles Affiliate RFNV -->
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp6DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtdHNsMi1lcw==&vid1=dtcva&vid3=va&fb=1" title="6 Bottles" class="d-block rounded-3 shadow item promo aff-fnl rfnv-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: var(--primary-color-light);">
-							<div class="py-3 pb-2" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
-								<h3 class="my-0 fw-bold">Best Value!</h3>
-								<p class="mb-0 fs-5">180 Days, 6 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 220px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>49</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 text-body savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $1488!</b>
-								</div>
-								<div class="p-2 mb-1" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;BIGGEST DISCOUNT</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-3 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s> <b>$294</b>
-								<br>
-								<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 overflow-hidden" style="background-color: var(--primary-color-light);">
-							<div class="pt-1 fw-bold item-header" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); font-size: .9em;">BEST VALUE!</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 14px;"></div>
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>6 Bottles</b><br><span style="font-size: .8em;">180 Day Supply</span></div>
-										<img src="../assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>49</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $1488!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;BIGGEST DISCOUNT</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s>&nbsp;<b>$294</b>
-											<br>
-											<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary w-100 mb-2 rounded-3 button-bg promo">
-									<div><i class="bi bi-cart-plus-fill"></i>&nbsp;<b>BUY NOW</b></div>
-								</div>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); rotate: 180deg; margin: -1px auto 0; background: var(--primary-color); height: 14px;"></div>
-						</div>
-					</a>
-					<!-- END 6 Bottles Affiliate RFNV -->
-
-				</div>
-				<!-- END 6 Bottles -->
-
-				<!-- 3 Bottles -->
-				<div class="col-12 col-md-4 mb-3 order-2 order-md-3">
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp3DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1" title="3 Bottles" class="d-block rounded-3 shadow item main-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
-								<h3 class="my-0 fw-bold">Good Value</h3>
-								<p class="mb-0 fs-5">90 Days, 3 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>69</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $684!</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s> <b>$207</b>
-								<br>
-								<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>Good Value</b><br><span style="font-size: .8em;">90 days, 3 bottles</span></div>
-										<img src="../assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>69</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $684!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals lh-1" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s>&nbsp;<b>$207</b>
-											<br>
-											<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="p-2">
-								<div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-						</div>
-					</a>
-
-					<!-- 3 Bottles Affiliate RFNV -->
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp3DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtdHNsMi1lcw==&vid1=dtcva&vid3=va&fb=1" title="3 Bottles" class="d-block rounded-3 shadow item aff-fnl rfnv-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
-								<h3 class="my-0 fw-bold">Good Value</h3>
-								<p class="mb-0 fs-5">90 Days, 3 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>69</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $684!</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s> <b>$207</b>
-								<br>
-								<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>Good Value</b><br><span style="font-size: .8em;">90 days, 3 bottles</span></div>
-										<img src="../assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>69</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $684!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals lh-1" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s>&nbsp;<b>$207</b>
-											<br>
-											<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="p-2">
-								<div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-						</div>
-					</a>
-					<!-- END 3 Bottles Affiliate RFNV -->
-
-				</div>
-				<!-- END 3 Bottles -->
-				
-			</div>
-		</div>
-	</section>
-
-	<section id="faq" class="py-5" style="background-color: var(--light-color);">
-		<div class="container">
-			<h2 class="fw-bold text-center mb-4">Frequently Asked Questions</h2>
-			<div class="accordion" id="accordionFlushExample">
-				<div class="accordion-item mb-2">
-					<h2 class="accordion-header" id="flush-headingOne">
-						<button class="accordion-button p-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">How does AlphaBites work?</button>
-					</h2>
-					<div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-						<div class="accordion-body p-3">Alphabites include powerful ingredients that provide essential nutrition to your “masculine health”, which plays a crucial role in sexual performance by holding healthy blood flow. That way you will have nice moments with your wife.</div>
-					</div>
-				</div>
-				<div class="accordion-item mb-2">
-					<h2 class="accordion-header" id="flush-headingTwo">
-						<button class="accordion-button collapsed p-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">Are there any side effects?</button>
-					</h2>
-					<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-						<div class="accordion-body p-3">AlphaBites is a 100% natural supplement, which means there are no side effects. But as always, if you currently have a medical condition or you're taking other prescription medication, we advise you to show a bottle of AlphaBites to your doctor before you use it, just to put your mind at ease.</div>
-					</div>
-				</div>
-				<div class="accordion-item mb-2">
-					<h2 class="accordion-header" id="flush-headingThree">
-						<button class="accordion-button collapsed p-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">What is your money back guarantee?</button>
-					</h2>
-					<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-						<div class="accordion-body p-3">It is a risk-free option that we are offering you because we believe in this formula so much.<br>It means you can try AlphaBites for a full 180 days.<br>And if you are not completely convinced by the amazing results, then you can simply get your money back.</div>
-					</div>
-				</div>
-				<div class="accordion-item mb-2">
-					<h2 class="accordion-header" id="flush-headingFour">
-						<button class="accordion-button collapsed p-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">How many bottles should I order?</button>
-					</h2>
-					<div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-						<div class="accordion-body p-3">Most of our customers order six bottles at a time, and many even double their orders because they want to enjoy the benefits of this incredible sexual health support formula for as long as possible.<br>It's a smart choice because those who buy the 6-bottle package get a big discount and free shipping. It offers great value and savings, especially since, once they start seeing results, our customers usually want to place another order.</div>
-					</div>
-				</div>
-				<div class="accordion-item mb-2">
-					<h2 class="accordion-header" id="flush-headingFive">
-						<button class="accordion-button collapsed p-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">How do I use AlphaBites?</button>
-					</h2>
-					<div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-						<div class="accordion-body p-3">Simply take 2 capsules a day with a glass of water.</div>
-					</div>
-				</div>
-				<div class="accordion-item mb-2">
-					<h2 class="accordion-header" id="flush-headingSix">
-						<button class="accordion-button collapsed p-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">Is this a one-off purchase?</button>
-					</h2>
-					<div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
-						<div class="accordion-body p-3">Yes, your order is a one-off purchase with no hidden autoship, clauses or charges. The price you see on the checkout page is the only price you will have to pay.</div>
-					</div>
-				</div>
-				<div class="accordion-item mb-2">
-					<h2 class="accordion-header" id="flush-headingSeven">
-						<button class="accordion-button collapsed p-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">What Should I Do Next?</button>
-					</h2>
-					<div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
-						<div class="accordion-body p-3">We believe you're ready to take the next step with AlphaBites. To begin your order, simply click on your preferred option below. Enter your details on the following page to complete your purchase, and then sit back and relax. Our dedicated team will handle the rest, ensuring your order is packed and shipped to your door in just a few days.</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="py-5" style="background-color: var(--secondary-color);">
-		<div class="container text-white text-center">
-			<h2 class="fw-bold m-0">To get started with <span style="color: var(--primary-color);">AlphaBites</span> today, simply click below and take advantage of this unique special time-limited offer…</h2>
-		</div>
-	</section>
-	<div class="triangle"></div>
-
-	<div id="order-now-3"></div>
-
-	<section id="products" class="pb-4 pb-md-5">
-		<div class="container">
-			<div class="row align-items-center">
-				
-				<!-- 2 Bottles -->
-				<div class="col-12 col-md-4 mb-3 order-3 order-md-1">
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp2DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRj&vid1=dtcva&vid3=va&fb=1" title="2 Bottles" class="d-block rounded-3 shadow item main-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
-								<h3 class="my-0 fw-bold">Try Two</h3>
-								<p class="mb-0 fs-5">60 Days, 2 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>79</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $436!</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$594</s> <b>$158</b>
-								<br>
-								<b>+9.99 SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>Try Two</b><br><span style="font-size: .8em;">60 days, 2 bottles</span></div>
-										<img src="../assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>79</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $436!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals lh-1" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$358</s>&nbsp;<b>$158</b>
-											<br>
-											<b>+9.99 SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="p-2">
-								<div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-						</div>
-					</a>
-
-					<!-- 2 Bottles Affiliate RFNV -->
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp2DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtdHNsMi1lcw==&vid1=dtcva&vid3=va&fb=1" title="2 Bottles" class="d-block rounded-3 shadow item aff-fnl rfnv-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
-								<h3 class="my-0 fw-bold">Try Two</h3>
-								<p class="mb-0 fs-5">60 Days, 2 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>79</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $436!</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$594</s> <b>$158</b>
-								<br>
-								<b>+9.99 SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>Try Two</b><br><span style="font-size: .8em;">60 days, 2 bottles</span></div>
-										<img src="../assets/main/products/img/img-2-bottles.png" alt="2 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>79</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $436!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals lh-1" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$358</s>&nbsp;<b>$158</b>
-											<br>
-											<b>+9.99 SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="p-2">
-								<div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-						</div>
-					</a>
-					<!-- END 2 Bottles Affiliate RFNV -->
-
-				</div>
-				<!-- END 2 Bottles -->
-
-				<!-- 6 Bottles -->
-				<div class="col-12 col-md-4 mb-3 order-1 order-md-2">
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp6DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1" title="6 Bottles" class="d-block rounded-3 shadow item promo main-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: var(--primary-color-light);">
-							<div class="py-3 pb-2" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
-								<h3 class="my-0 fw-bold">Best Value!</h3>
-								<p class="mb-0 fs-5">180 Days, 6 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 220px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>49</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 text-body savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $1488!</b>
-								</div>
-								<div class="p-2 mb-1" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;BIGGEST DISCOUNT</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-3 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s> <b>$294</b>
-								<br>
-								<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 overflow-hidden" style="background-color: var(--primary-color-light);">
-							<div class="pt-1 fw-bold item-header" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); font-size: .9em;">BEST VALUE!</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 14px;"></div>
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>6 Bottles</b><br><span style="font-size: .8em;">180 Day Supply</span></div>
-										<img src="../assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>49</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $1488!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;BIGGEST DISCOUNT</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s>&nbsp;<b>$294</b>
-											<br>
-											<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary w-100 mb-2 rounded-3 button-bg promo">
-									<div><i class="bi bi-cart-plus-fill"></i>&nbsp;<b>BUY NOW</b></div>
-								</div>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); rotate: 180deg; margin: -1px auto 0; background: var(--primary-color); height: 14px;"></div>
-						</div>
-					</a>
-
-					<!-- 6 Bottles Affiliate RFNV -->
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp6DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtdHNsMi1lcw==&vid1=dtcva&vid3=va&fb=1" title="6 Bottles" class="d-block rounded-3 shadow item promo aff-fnl rfnv-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: var(--primary-color-light);">
-							<div class="py-3 pb-2" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark));">
-								<h3 class="my-0 fw-bold">Best Value!</h3>
-								<p class="mb-0 fs-5">180 Days, 6 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 220px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>49</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 text-body savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $1488!</b>
-								</div>
-								<div class="p-2 mb-1" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;BIGGEST DISCOUNT</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-3 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s> <b>$294</b>
-								<br>
-								<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 overflow-hidden" style="background-color: var(--primary-color-light);">
-							<div class="pt-1 fw-bold item-header" style="background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); font-size: .9em;">BEST VALUE!</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color-light), var(--primary-color-dark)); height: 14px;"></div>
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>6 Bottles</b><br><span style="font-size: .8em;">180 Day Supply</span></div>
-										<img src="../assets/main/products/img/img-6-bottles.png" alt="6 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>49</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $1488!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;BIGGEST DISCOUNT</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$1782</s>&nbsp;<b>$294</b>
-											<br>
-											<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary w-100 mb-2 rounded-3 button-bg promo">
-									<div><i class="bi bi-cart-plus-fill"></i>&nbsp;<b>BUY NOW</b></div>
-								</div>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); rotate: 180deg; margin: -1px auto 0; background: var(--primary-color); height: 14px;"></div>
-						</div>
-					</a>
-					<!-- END 6 Bottles Affiliate RFNV -->
-
-				</div>
-				<!-- END 6 Bottles -->
-
-				<!-- 3 Bottles -->
-				<div class="col-12 col-md-4 mb-3 order-2 order-md-3">
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp3DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1" title="3 Bottles" class="d-block rounded-3 shadow item main-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
-								<h3 class="my-0 fw-bold">Good Value</h3>
-								<p class="mb-0 fs-5">90 Days, 3 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>69</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $684!</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s> <b>$207</b>
-								<br>
-								<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>Good Value</b><br><span style="font-size: .8em;">90 days, 3 bottles</span></div>
-										<img src="../assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>69</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $684!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals lh-1" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s>&nbsp;<b>$207</b>
-											<br>
-											<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="p-2">
-								<div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-						</div>
-					</a>
-
-					<!-- 3 Bottles Affiliate RFNV -->
-					<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp3DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtdHNsMi1lcw==&vid1=dtcva&vid3=va&fb=1" title="3 Bottles" class="d-block rounded-3 shadow item aff-fnl rfnv-fnl" style="text-decoration: none; padding: 3px; color: var(--text-color); background-color: var(--primary-color-light);">
-						<!-- desktop -->
-						<div class="d-none d-md-block text-center rounded-top-3 rounded-bottom-3 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="py-3 pb-2" style="background-color: var(--primary-color-light);">
-								<h3 class="my-0 fw-bold">Good Value</h3>
-								<p class="mb-0 fs-5">90 Days, 3 Bottles</p>
-							</div>
-							<div class="w-100" style="clip-path: polygon(100% 0, 0 0, 50% 100%); margin: -1px auto 0; background: var(--primary-color-light); height: 30px;"></div>
-							<img src="../assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
-							<div class="d-flex gap-1 lh-1 px-2 align-items-center mx-auto price" style="max-width: fit-content;">
-								<b style="font-size: 4.6em;"><sup class="fs-3">$</sup>69</b>
-								<b class="text-start opacity-75">PER<br>BOTTLE</b>
-							</div>
-							<div class="mb-2 savings" style="font-size: .85em;">
-								<div class="p-2 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-									<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $684!</b>
-								</div>
-								<div class="p-2" style="border-bottom: 1px solid #ccc;">
-									<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-								</div>
-							</div>
-							<div class="px-2">
-								<div class="btn btn-primary rounded-3 button-bg promo fs-4 w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-							<img src="../assets/main/products/img/cards.png" alt="Cards" class="img-fluid mx-auto my-2" style="max-width: 180px;">
-							<div class="px-2 mb-3 totals">
-								Total: <s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s> <b>$207</b>
-								<br>
-								<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-							</div>
-						</div>
-						<!-- mobile -->
-						<div class="d-md-none text-center rounded-3 pt-2 overflow-hidden" style="background-color: #fbfbfb;">
-							<div class="container">
-								<div class="row align-items-center">
-									<div class="col-6 p-1">
-										<div class="mb-1 lh-1 supply"><b>Good Value</b><br><span style="font-size: .8em;">90 days, 3 bottles</span></div>
-										<img src="../assets/main/products/img/img-3-bottles.png" alt="3 Bottles" style="max-height: 200px;">
-									</div>
-									<div class="col-6 p-1">
-										<div class="d-flex gap-1 lh-1 align-items-center mx-auto price" style="max-width: fit-content;">
-											<b style="font-size: 2.8em; letter-spacing: -.06em;"><sup class="fs-5">$</sup>69</b>
-											<b class="text-start" style="font-size: .65em;">PER<br>BOTTLE</b>
-										</div>
-										<div class="mb-2 lh-1 savings" style="font-size: .7em;">
-											<div class="p-1 mb-1" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-												<b style="color: var(--contrast-color);"><i class="bi bi-check-circle-fill"></i>&nbsp;YOU SAVE $684!</b>
-											</div>
-											<div class="p-1" style="border-bottom: 1px solid #ccc;">
-												<b><i class="bi bi-check-circle-fill"></i>&nbsp;180 DAYS GUARANTEE</b>
-											</div>
-										</div>
-										<div class="totals lh-1" style="font-size: .8em;">
-											Total:&nbsp;<s style="text-decoration-color: red; text-decoration-thickness: 2px;">$891</s>&nbsp;<b>$207</b>
-											<br>
-											<b>+&nbsp;<span style="color: var(--contrast-color);">FREE</span> SHIPPING</b>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="p-2">
-								<div class="btn btn-primary rounded-3 button-bg promo w-100" style="font-weight: 900; max-width: 250px;">BUY NOW</div>
-							</div>
-						</div>
-					</a>
-					<!-- END 3 Bottles Affiliate RFNV -->
-
-				</div>
-				<!-- END 3 Bottles -->
-				
-			</div>
-		</div>
-	</section>
-
-	<section id="references" class="pb-5">
+</div>
+<section id="references" class="pb-5">
 		<div class="container" style="max-width: 1000px;">
+			<br>
 			<h2 class="fw-bold mb-4 text-center">Scientific References</h2>
 		</div>
 		<div class="container" style="max-width: 1100px;">
@@ -1713,305 +636,139 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</div>
 	</section>
 
-	<footer class="text-center py-5" style="background-color: var(--secondary-color);">
+	<footer class="text-center py-5" style="background-color: #000000;">
 		<div class="container text-white text-center" style="max-width: 1100px;">
-			<ul class="list-inline small mb-4">
-				<li class="list-inline-item"><a class="link-light text-decoration-none" href="/contact-us" target="_blank">Contact</a></li>
-				<li class="list-inline-item"><a class="link-light text-decoration-none" href="/terms-of-service" target="_blank">Terms</a></li>
-				<li class="list-inline-item"><a class="link-light text-decoration-none" href="/privacy-policy" target="_blank">Privacy</a></li>
-				<li class="list-inline-item"><a class="link-light text-decoration-none" href="/refund-policy" target="_blank">Return Policy</a></li>
-				<li class="list-inline-item"><a class="link-light text-decoration-none" href="/shipping-policy" target="_blank">Shipping</a></li>
-				<li class="list-inline-item"><a class="link-light text-decoration-none" href="/disclaimer" target="_blank">Disclaimer</a></li>
-				<li class="list-inline-item"><a class="link-light text-decoration-none" href="/references" target="_blank">References</a></li>
 			</ul>
 			<div style="font-size: .7em;">
 				<p>Statements on this website have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease.</p>
-				<p>The website's content and the product for sale is based upon the author's opinion and is provided solely on an "AS IS" and "AS AVAILABLE" basis. You should do your own research and confirm the information with other sources when searching for information regarding health issues and always review the information carefully with your professional health care provider before using any of the protocols presented on this website and/or in the product sold here. Neither BuyGoods nor the author are engaged in rendering medical or similar professional services or advice via this website or in the product, and the information provided is not intended to replace medical advice offered by a physician or other licensed healthcare provider. You should not construe BuyGoods's sale of this product as an endorsement by BuyGoods of the views expressed herein, or any warranty or guarantee of any strategy, recommendation, treatment, action, or application of advice made by the author of the product.</p>
+				<p>The website's content and the product for sale is based upon the author's opinion and is provided solely on an "AS IS" and "AS AVAILABLE" basis. You should do your own research and confirm the information with other sources when searching for information regarding health issues and always review the information carefully with your professional health care provider before using any of the protocols presented on this website and/or in the product sold here. Neither Digistore nor the author are engaged in rendering medical or similar professional services or advice via this website or in the product, and the information provided is not intended to replace medical advice offered by a physician or other licensed healthcare provider. You should not construe Digistore's sale of this product as an endorsement by Digistore of the views expressed herein, or any warranty or guarantee of any strategy, recommendation, treatment, action, or application of advice made by the author of the product.</p>
 				<p>Some names and personal identifying information on this site have been changed to protect the privacy of individuals.</p>
 			</div>
 			<p class="mb-0 opacity-50 small" style="font-size: .8em;">© AlphaBites Research 2024. All Rights Reserved.</p>
 		</div>
 	</footer>
 
-	<!-- Purchase Notifications -->
-	<div id="purchase-notifications" class="purchases-disclaimer">
-		<div class="purchases-box">
-			<div class="purchased-bottle">
-				<img id="one-bottle" src="../assets/main/products/img/img-2-bottles.png" style="display: none;">
-				<img id="three-bottles" src="../assets/main/products/img/img-3-bottles.png" style="display: none;">
-				<img id="six-bottles" src="../assets/main/products/img/img-6-bottles.png" style="display: none;">
-			</div>
-			<div class="purchase-info">
-				<span id="customer-name"></span> in <span id="customer-location"></span> just bought <span id="items-purchased"></span>!
-			</div>
-		</div>
-	</div>
-	<!-- END Purchase Notifications -->
-
-	<!-- Redirect to Checkout -->
-	<div id="affiliate-redirect" style="display: none;">
-		<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp2DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRj&vid1=dtcva&vid3=va&fb=1" id="link-2btl">LINK A</a>
-		<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp3DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1" id="link-3btl">LINK B</a>
-		<a href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp6DTC&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwtZHRjLw==&vid1=dtcva&vid3=va&fb=1" id="link-6btl">LINK C</a>
-	</div>
-	<div id="spinner" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--secondary-color); align-items: center; justify-content: center; flex-flow: column; z-index: 9999;">
-		<img src="../assets/main/img/logo.png" alt="logo" style="max-width: 300px;">
-		<svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill:white;"><style>.spinner_EUy1{animation:spinner_grm3 1.2s infinite}.spinner_f6oS{animation-delay:.1s}.spinner_g3nX{animation-delay:.2s}.spinner_nvEs{animation-delay:.3s}.spinner_MaNM{animation-delay:.4s}.spinner_4nle{animation-delay:.5s}.spinner_ZETM{animation-delay:.6s}.spinner_HXuO{animation-delay:.7s}.spinner_YaQo{animation-delay:.8s}.spinner_GOx1{animation-delay:.9s}.spinner_4vv9{animation-delay:1s}.spinner_NTs9{animation-delay:1.1s}.spinner_auJJ{transform-origin:center;animation:spinner_T3O6 6s linear infinite}@keyframes spinner_grm3{0%,50%{animation-timing-function:cubic-bezier(.27,.42,.37,.99);r:1px}25%{animation-timing-function:cubic-bezier(.53,0,.61,.73);r:2px}}@keyframes spinner_T3O6{0%{transform:rotate(360deg)}100%{transform:rotate(0deg)}}</style><g class="spinner_auJJ"><circle class="spinner_EUy1" cx="12" cy="3" r="1"/><circle class="spinner_EUy1 spinner_f6oS" cx="16.50" cy="4.21" r="1"/><circle class="spinner_EUy1 spinner_NTs9" cx="7.50" cy="4.21" r="1"/><circle class="spinner_EUy1 spinner_g3nX" cx="19.79" cy="7.50" r="1"/><circle class="spinner_EUy1 spinner_4vv9" cx="4.21" cy="7.50" r="1"/><circle class="spinner_EUy1 spinner_nvEs" cx="21.00" cy="12.00" r="1"/><circle class="spinner_EUy1 spinner_GOx1" cx="3.00" cy="12.00" r="1"/><circle class="spinner_EUy1 spinner_MaNM" cx="19.79" cy="16.50" r="1"/><circle class="spinner_EUy1 spinner_YaQo" cx="4.21" cy="16.50" r="1"/><circle class="spinner_EUy1 spinner_4nle" cx="16.50" cy="19.79" r="1"/><circle class="spinner_EUy1 spinner_HXuO" cx="7.50" cy="19.79" r="1"/><circle class="spinner_EUy1 spinner_ZETM" cx="12" cy="21" r="1"/></g></svg>
-	</div>
-	<!-- END Redirect to Checkout -->
-
-	<!-- Botão escondido para redirecionamento -->
-	<div style="display: none;">
-		<a id="redirectButton" href="https://buygoods.com/secure/checkout.html?account_id=9236&product_codename=alp6n3ep&redirect=aHR0cHM6Ly9nZXRhbHBoYWJpdGVzLmNvbS91cHNlbGwyLWR0Yy8=&vid1=dtcexitpopup">RedirectButton</a>
-	</div>
-
 	<!-- Bootstrap -->
-	<script type="text/javascript" src="../assets/main/bootstrap/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="assets/main/bootstrap/bootstrap.bundle.min.js"></script>
 	<!-- END Bootstrap -->
 
-	<!-- BuyGoods Disclaimer -->
-	<div style="background-color: black;">
-		<div class="container">
-			<span id=disclaimer></span>
-			<script src="https://display.buygoods.com/v1/disclaimer?id=disclaimer&account_id=9236" type="text/javascript"></script>
-		</div>
-	</div>
-	<!-- END BuyGoods Disclaimer -->
-
-	<!-- Get URL Parameters JS -->
-	<script type="text/javascript">
-		const queryString = window.location.search;
-		const urlParams = new URLSearchParams(queryString);
-	</script>
-	<!-- END Get URL Parameters JS -->
-
-	<!-- Affiliate RFNV -->
-	<script type="text/javascript">
-		const affIdUrl = urlParams.get('aff_id');
-		if (affIdUrl == 115) {
-			document.querySelectorAll('.main-fnl').forEach(function (e) {
-				e.style.setProperty("display", "none", "important");
-			});
-			document.querySelectorAll('.rfnv-fnl').forEach(function (e) {
-				e.style.setProperty("display", "block", "important");
-			});
-		}
-	</script>
-	<!-- END Affiliate RFNV -->
-
-	<!-- Redirect to Checkout JS -->
-	<script type="text/javascript">
-		const btlQtyUrl = urlParams.get('btl_qty');
-		if (urlParams.has('btl_qty')) {
-			document.querySelector("#spinner").style.display = "flex";
-		}
-		document.addEventListener('DOMContentLoaded', function() {
-			setTimeout(function() {
-				if (urlParams.has('btl_qty')) {
-					switch(btlQtyUrl) {
-						case '2btl':
-							document.querySelector("#link-2btl").click();
-							break;
-						case '3btl':
-							document.querySelector("#link-3btl").click();
-							break;
-						case '6btl':
-							document.querySelector("#link-6btl").click();
-					}
-				}
-			}, 500);
-		}, false );
-	</script>
-	<!-- END Redirect to Checkout JS -->
-
-	<!-- Purchase Notifications JS -->
-	<script type="text/javascript">
-		// Bottles Bought
-		var stockNumber = 250;
-		const cNames = ['Michael', 'James', 'John', 'Robert', 'David', 'William', 'Christopher', 'Joseph', 'Richard', 'Daniel'];
-		const cLocals = ['California', 'Ohio', 'Pennsylvania', 'Michigan', 'Illinois', 'North Caroline', 'Georgia', 'Florida', 'Texas'];
-		const tBottles = [3, 6, 6];
-
-		function bottlesBuying() {
-			const randName = cNames[Math.floor(Math.random() * cNames.length)];
-			const randLocal = cLocals[Math.floor(Math.random() * cLocals.length)];
-			const randBottle = tBottles[Math.floor(Math.random() * tBottles.length)];
-
-			const oneBottle = document.querySelector('#one-bottle');
-			const threeBottles = document.querySelector('#three-bottles');
-			const sixBottles = document.querySelector('#six-bottles');
-
-			stockNumber -= randBottle;
-
-			if ( randBottle == 3 ) {
-				oneBottle.style.display = 'none';
-				threeBottles.style.display = 'block';
-				sixBottles.style.display = 'none';
-				document.querySelector('#items-purchased').innerHTML = randBottle + ' bottles';
-			} else if ( randBottle == 6 ) {
-				oneBottle.style.display = 'none';
-				threeBottles.style.display = 'none';
-				sixBottles.style.display = 'block';
-				document.querySelector('#items-purchased').innerHTML = randBottle + ' bottles';
-			} else {
-				oneBottle.style.display = 'block';
-				threeBottles.style.display = 'none';
-				sixBottles.style.display = 'none';
-				document.querySelector('#items-purchased').innerHTML = randBottle + ' bottle';
-			}
-
-			document.querySelectorAll('.stock').forEach(function(e) {
-				e.innerHTML = stockNumber;
-			});
-			document.querySelector('#customer-name').innerHTML = randName;
-			document.querySelector('#customer-location').innerHTML = randLocal;
-			document.querySelector('.purchases-disclaimer').style.right = '20px';
-			setTimeout(function() {
-				document.querySelector('.purchases-disclaimer').style.right = '-800px';
-			}, 10000);
-			if (stockNumber < 25) clearInterval(buyTimer);
-		}
-		var buyTimer = setInterval(bottlesBuying, 12000);
-
-
-				
-  // COOKIES
-		document.addEventListener("DOMContentLoaded", () => {
-    const nome = "versao";
-    const valor = "va";
-    const dias = 30;
-
-    // Função para obter o valor de um cookie
-    function getCookie(nome) {
-        const cookies = document.cookie.split("; ");
-        for (let cookie of cookies) {
-            const [chave, valor] = cookie.split("=");
-            if (chave === nome) {
-                return valor;
-            }
+<script>
+    window.onload = function () {
+        var links = document.getElementsByTagName("a");
+        for (var i = 0, n = links.length; i < n; i++) {
+            var href = links[i].href.trim() +
+                    (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                    document.location.search.replace('?', '').toString();
+            links[i].href = href;
         }
-        return null;
     }
-
-    // Função para definir ou redefinir o cookie
-    function setCookie(nome, valor, dias) {
-        const data = new Date();
-        data.setTime(data.getTime() + (dias * 24 * 60 * 60 * 1000));
-        const expires = "expires=" + data.toUTCString();
-        document.cookie = `${nome}=${valor}; ${expires}; path=/`;
-    }
-
-    // Verifica se o cookie já existe
-    if (getCookie(nome)) {
-        console.log(`Cookie "${nome}" encontrado. Redefinindo...`);
-    } else {
-        console.log(`Cookie "${nome}" não encontrado. Criando...`);
-    }
-
-    // Redefine ou cria o cookie
-    setCookie(nome, valor, dias);
-			});
+</script>
 
 
-	</script>
-	<!-- END Purchase Notifications JS -->
+<!-- ========================= JAVASCRIP ========================= -->
+<script>
 
-	<!-- popup -->
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script>
-			var modalExit = new bootstrap.Modal(document.getElementById('modalExit'), {
-					keyboard: true
-			});
+	const timeBuy = 20000; 
+	const timeShowModal = timeBuy - 2000;
 
-			let hasShownExitModal = false;
+	var stockNumber = 250;
+	const cNames = ['Michael', 'James', 'John', 'Robert', 'David', 'William', 'Christopher', 'Joseph', 'Richard', 'Daniel'];
+	const cLocals = ['California', 'Ohio', 'Pennsylvania', 'Michigan', 'Illinois', 'North Carolina', 'Georgia', 'Florida', 'Texas'];
+	const tBottles = [3, 6, 6];
 
-			document.addEventListener("mouseout", function(event) {
-					if (!hasShownExitModal && event.relatedTarget === null) {
-							modalExit.show();
-							hasShownExitModal = true;
-					}
-			});
+	function bottlesBuying() {
+	  const randName = cNames[Math.floor(Math.random() * cNames.length)];
+	  const randLocal = cLocals[Math.floor(Math.random() * cLocals.length)];
+	  const randBottle = tBottles[Math.floor(Math.random() * tBottles.length)];
 
-			document.getElementById('form-dtc-2potes').addEventListener('submit', async function(event) {
-					event.preventDefault();
+	  stockNumber -= randBottle;
 
-					var firstName = document.getElementById('firstName').value.trim();
-					var email = document.getElementById('email').value.trim();
+	  const oneBottle = document.querySelector('#one-bottle');
+	  const threeBottles = document.querySelector('#three-bottles');
+	  const sixBottles = document.querySelector('#six-bottles');
 
-					if (firstName === "" || email === "") {
-							Swal.fire({
-									icon: 'error',
-									title: 'Oops...',
-									text: 'Please fill in all required fields!'
-							});
-							return;
-					}
+	  if ( randBottle == 3 ) {
+		oneBottle.style.display = 'none';
+		threeBottles.style.display = 'block';
+		sixBottles.style.display = 'none';
+		document.querySelector('#items-purchased').innerHTML = randBottle + ' bottles';
+	  } else if ( randBottle == 6 ) {
+		oneBottle.style.display = 'none';
+		threeBottles.style.display = 'none';
+		sixBottles.style.display = 'block';
+		document.querySelector('#items-purchased').innerHTML = randBottle + ' bottles';
+	  } else {
+		oneBottle.style.display = 'block';
+		threeBottles.style.display = 'none';
+		sixBottles.style.display = 'none';
+		document.querySelector('#items-purchased').innerHTML = randBottle + ' bottle';
+	  }
 
-					var currentUrlParams = new URLSearchParams(window.location.search);
-					var paramsObject = {};
-					currentUrlParams.forEach((value, key) => {
-							paramsObject[key] = value;
-					});
+	  document.querySelector('#customer-name').innerHTML = randName;
+	  document.querySelector('#customer-location').innerHTML = randLocal;
+	  document.querySelector('#items-purchased').innerHTML = randBottle + (randBottle > 1 ? ' bottles' : ' bottle');
 
-					var currentUrl = window.location.href;
+	  document.querySelector('.count-bottle').innerHTML = stockNumber;
 
-					var formData = new URLSearchParams();
-					formData.append("firstName", firstName);
-					formData.append("email", email);
-					formData.append("fullUrl", currentUrl); 
+	  document.querySelector('.modal-right').style.right = '20px';
+	  setTimeout(function() {
+		document.querySelector('.modal-right').style.right = '-800px';
+	  }, timeShowModal);
 
-					Object.keys(paramsObject).forEach(key => {
-							formData.append(key, paramsObject[key]);
-					});
+	  if (stockNumber < 25) clearInterval(buyTimer);
+	}
 
-					try {
-							// send to n8n
-							await fetch("https://n8n.omatheusdev.com/webhook/exit-popup-n8n-ZJvglYaKqN5HNjWE", {
-									method: "POST",
-									headers: {
-											"Content-Type": "application/x-www-form-urlencoded"
-									},
-									body: formData.toString()
-							});
+	var buyTimer = setInterval(bottlesBuying, timeBuy);
 
-							let timerInterval;
-							Swal.fire({
-									icon: 'success',
-									title: 'Successfully Submitted!',
-									text: 'We will redirect you in 3s...',
-									timer: 3000,
-									timerProgressBar: true,
-									didOpen: () => {
-											timerInterval = setInterval(() => {
-													let timeLeft = Swal.getTimerLeft() / 1000;
-													if (timeLeft <= 0) {
-															clearInterval(timerInterval);
-													} else {
-															Swal.getContent().querySelector('p').textContent = `We will redirect you in ${Math.ceil(timeLeft)}s...`;
-													}
-											}, 1000);
-									},
-									didClose: () => {
-										document.getElementById('redirectButton').click(); // Simula clique no botão escondido
-									}
-							});
-					} catch (error) {
-							Swal.fire({
-									icon: 'error',
-									title: 'Oops...',
-									text: 'There was an error submitting the form. Please try again later.'
-							});
-					}
-			});
+	function toggleVisibility(event) {
+	  const paragraphs = document.querySelectorAll('.toggle-paragraph');
+	  const icons = document.querySelectorAll('.toggle-icon');
+	  const targetParagraph = event.currentTarget.nextElementSibling;
+	  const targetIcon = event.currentTarget.querySelector('.toggle-icon');
+	  const isVisible = !targetParagraph.classList.contains('hidden');
 
-			window.addEventListener('popstate', function(event) {
-					if (!hasShownExitModal) {
-							modalExit.show();
-							hasShownExitModal = true;
-					}
-			});
-	</script>
+	  paragraphs.forEach(p => p.classList.add('hidden'));
+	  icons.forEach(icon => {
+		icon.classList.remove('bi-chevron-up');
+		icon.classList.add('bi-chevron-down');
+	  });
 
-	
+	  if (!isVisible) {
+		targetParagraph.classList.remove('hidden');
+		targetIcon.classList.remove('bi-chevron-down');
+		targetIcon.classList.add('bi-chevron-up');
+	  }
+	}
+	/* ============ DROP DRAW ============ */
+	/* ============ CRONOMETRO ============ */
+	document.addEventListener('DOMContentLoaded', () => {
+	  const timerElement = document.querySelector('.timer-count');
+	  const timerElement2 = document.querySelector('.timer-count2');
+
+	  if (!timerElement || !timerElement2) {
+		return;
+	  }
+
+	  let time = 00 * 10; 
+
+	  function updateTimer() {
+		const minutes = Math.floor(time / 60);
+		const seconds = time % 60;
+		timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+		timerElement2.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+		if (time > 0) {
+			time--;
+		} else {
+		  clearInterval(timerInterval);
+		}
+	  }
+
+	  const timerInterval = setInterval(updateTimer, 1000);
+	  updateTimer();
+	});
+	/* ============ CRONOMETRO ============ */
+  </script>
+  <!-- ========================= JAVASCRIP ========================= -->
+
 </body>
 </html>
