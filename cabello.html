@@ -1,109 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Noticias</title>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmation d’adresse et de commande – Action requise</title>
+</head>
+<body style="margin:0; padding:0; background-color:#ffffff; font-family:Arial, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="padding: 20px;">
+          
+          <!-- Logo -->
+          <tr>
+            <td align="center" style="padding-bottom: 20px;">
+              <img src="https://i.postimg.cc/VN5yL9h1/logo.png" alt="Club de Lui" style="max-width: 200px;">
+            </td>
+          </tr>
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://scripts.converteai.net/b7c0118f-d1f1-4291-8210-dc2a3e7fc03d/players/64b4926b037324000991f127/player.js" as="script" async>
-    <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script" async>
-    <link rel="preload" href="https://images.converteai.net/b7c0118f-d1f1-4291-8210-dc2a3e7fc03d/players/64b4926b037324000991f127/thumbnail.jpg" as="image">
-    <link rel="preload" href="https://cdn.converteai.net/b7c0118f-d1f1-4291-8210-dc2a3e7fc03d/64b49251037324000991f126/main.m3u8" as="fetch">
-    <link rel="dns-prefetch" href="https://cdn.converteai.net">
-    <link rel="dns-prefetch" href="https://scripts.converteai.net">
-    <link rel="dns-prefetch" href="https://images.converteai.net">
-    <link rel="dns-prefetch" href="https://api.vturb.com.br">
+          <!-- Message principal -->
+          <tr>
+            <td style="text-align:left; color:#333;">
+              <h2 style="margin-top: 0;">📦 Confirmation de votre adresse et de votre commande</h2>
+              <p style="font-size: 16px;">Bonjour Yann,</p>
 
-    <!-- Fontes Google com preconnect e otimização de fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=Signika:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+              <p style="font-size: 16px;">
+                Nous vous contactons concernant votre commande récente sur <strong>Club de Lui</strong>.
+              </p>
 
-    <!-- Minified Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+              <p style="font-size: 16px;">
+                Il semble que l’adresse renseignée soit incomplète ou incorrecte :
+              </p>
 
-    <!-- Minified Custom CSS -->
-    <style type="text/css">
-      /* Critical inline CSS for initial load */
-      body {
-        background-color: white; /* Fundo branco */
-        color: black; /* Texto preto */
-        font-family: 'Oswald', sans-serif;
-      }
+              <p style="font-size: 16px; font-weight: bold; color: #d9534f;">
+                Rue Vitruve, 75020 Paris, France
+              </p>
 
-      header {
-        color: black;
-        background-color: white;
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
-      }
+              <p style="font-size: 16px;">
+                Merci de nous confirmer votre <strong>adresse complète et exacte</strong> afin de garantir la bonne livraison de votre colis.
+              </p>
 
-      .headline {
-        background-color: white;
-        color: black;
-        padding: 20px 15px; /* Diminui o padding para aproximar do topo */
-        text-align: center;
-        font-size: 1.8rem; /* Tamanho ajustado */
-        line-height: 1.4; /* Redução do espaçamento */
-        margin-bottom: 10px; /* Aproxima o vídeo da headline */
-      }
+              <h3>✅ Veuillez également confirmer :</h3>
+              <ul style="font-size: 16px; padding-left: 20px;">
+                <li>👉 <strong>La couleur :</strong> Blanc</li>
+                <li>👉 <strong>La taille :</strong> M</li>
+              </ul>
 
-      .headline span.highlight-red {
-        color: red;
-      }
+              <p style="font-size: 16px;">
+                Nous attendons votre réponse avec les informations correctes pour expédier votre commande dans les meilleurs délais.
+              </p>
 
-      @media (max-width: 768px) {
-        .headline {
-          font-size: 1.4rem; /* Ajuste para telas menores */
-          padding: 15px 10px; /* Reduz padding no mobile */
-        }
-      }
+              <p style="font-size: 16px;">
+                Merci beaucoup pour votre réactivité !<br><br>
+                Cordialement,<br>
+                <strong>Service Client – Club de Lui</strong>
+              </p>
+            </td>
+          </tr>
 
-      .container, .text-center, .row, .col-lg-8 {
-        color: black; /* Texto preto nas colunas */
-      }
+          <!-- Footer -->
+          <tr>
+            <td style="text-align: center; font-size: 12px; color: #999; padding-top: 30px;">
+              Merci de faire partie de la communauté Club de Lui.<br>
+              © 2025 Club de Lui. Tous droits réservés.
+            </td>
+          </tr>
 
-      /* Ajuste de espaçamento entre o vídeo e o último texto */
-      #vid_66ff1577387c70000bba6d47 {
-        margin-bottom: 20px; /* Diminui o espaço entre o vídeo e o final */
-      }
-    </style>
-  </head>
-
-  <body>
-    <header class="py-2"> <!-- Reduzi o padding superior do header -->
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-
-            <!-- Headline estilizada -->
-            <div class="headline">
-              <p><span class="highlight-red">Este Truco Natural Está Haciendo que el Cabello Vuelva a Crecer en Semanas</span> <br>Sin Efectos Secundarios!</p>
-              <p><span class="highlight-red">Vídeo disponible sólo hoy</span></p>
-            </div>
-
-            <!-- VSL com lazy loading de imagens na proporção 4:5 -->
-            <div id="vid_66ff1577387c70000bba6d47" style="position:relative;width:100%;padding-top:125%;">
-              <img id="thumb_66ff1577387c70000bba6d47" loading="lazy" src="https://images.converteai.net/5e7a02df-47b8-46d3-985c-782d0197442d/players/66ff1577387c70000bba6d47/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
-              <div id="backdrop_66ff1577387c70000bba6d47" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div>
-            </div>
-            <script type="text/javascript" id="scr_66ff1577387c70000bba6d47" defer>
-              var s = document.createElement("script");
-              s.src = "https://scripts.converteai.net/5e7a02df-47b8-46d3-985c-782d0197442d/players/66ff1577387c70000bba6d47/player.js";
-              s.async = true;
-              document.head.appendChild(s);
-            </script>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Bootstrap and custom JS with defer -->
-    <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script defer src="./assets/js/com.js"></script>
-  </body>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
 </html>
